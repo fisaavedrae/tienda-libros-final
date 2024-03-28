@@ -1,0 +1,33 @@
+.form-control {
+  outline: 2px solid black;
+  border-radius: 3px;
+}
+
+#inputSearch {
+  color: #ebebeb;
+  background-color: black;
+  border: none;
+  border-radius: 0;
+  width: 93%;
+}
+#inputSearch::placeholder {
+  color: #ebebeb;
+}
+#inputSearch:focus-visible {
+  outline: 2px solid black;
+  border-radius: 2px;
+}
+#inputSearch:focus {
+  outline: 2px solid black;
+  border-radius: 2px;
+}
+.input-group-text {
+  color: #ebebeb;
+  background-color: black;
+  border: none;
+  --bs-focus-ring-width: 0;
+}
+#inputCant {
+  width: 5%;
+  text-align: center;
+}

@@ -1,0 +1,60 @@
+.paginations {
+  --bs-pagination-padding-x: 0.75rem;
+  --bs-pagination-padding-y: 0.375rem;
+  --bs-pagination-font-size: 1rem;
+  --bs-pagination-color: var(--bs-link-color);
+  --bs-pagination-bg: var(--bs-body-bg);
+  --bs-pagination-border-width: var(--bs-border-width);
+  --bs-pagination-border-color: var(--bs-border-color);
+  --bs-pagination-border-radius: var(--bs-border-radius);
+  --bs-pagination-hover-color: var(--bs-link-hover-color);
+  --bs-pagination-hover-bg: var(--bs-tertiary-bg);
+  --bs-pagination-hover-border-color: var(--bs-border-color);
+  --bs-pagination-focus-color: var(--bs-link-hover-color);
+  --bs-pagination-focus-bg: var(--bs-secondary-bg);
+  /* --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);*/
+  --bs-pagination-active-color: #fff;
+  /* --bs-pagination-active-bg: #0d6efd;
+  --bs-pagination-active-border-color: #0d6efd;*/
+  --bs-pagination-disabled-color: var(--bs-secondary-color);
+  --bs-pagination-disabled-bg: var(--bs-secondary-bg);
+  --bs-pagination-disabled-border-color: var(--bs-border-color);
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+.page-link {
+  cursor: pointer;
+  border: none;
+  color: rgb(72, 71, 71);
+  border-bottom: 2px solid white;
+}
+.page-link:hover {
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  color: rgb(72, 71, 71);
+  border-bottom: 2px solid black;
+}
+.page-link:focus {
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  color: rgb(72, 71, 71);
+  border-bottom: 2px solid black;
+}
+.page-link:focus-visible {
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  color: rgb(72, 71, 71);
+  border-bottom: 2px solid black;
+}
+.pagina-actual {
+  cursor: pointer;
+  border: none;
+  color: black;
+  border-bottom: 2px solid white;
+  border-bottom: 2px solid black;
+  text-shadow: 0px 0px 5px rgb(199, 197, 197);
+}

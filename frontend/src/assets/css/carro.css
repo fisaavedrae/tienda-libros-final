@@ -1,0 +1,40 @@
+.items-carro {
+  font-size: 0.8rem;
+}
+.total-carro {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+#producto-carro .titulo-libro {
+  font-size: 0.9rem;
+}
+
+#producto-carro .precio-libro {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+#producto-carro .cant-libro {
+  font-size: 0.8rem;
+}
+#producto-carro i:hover {
+  cursor: pointer;
+  color: rgb(203, 142, 9);
+}
+.btn-pago {
+  background-color: black;
+  color: white;
+  font-weight: thin;
+  font-size: 0.8rem;
+  border-radius: 0;
+}
+.btn-pago:hover {
+  background-color: rgb(203, 142, 9);
+  color: white;
+  font-weight: thin;
+  font-size: 0.8rem;
+  border-radius: 0;
+}
+.icono-ver:hover {
+  cursor: pointer;
+  color: rgb(203, 142, 9);
+}
