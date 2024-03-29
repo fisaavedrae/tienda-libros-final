@@ -326,7 +326,7 @@ const traerGeneroSelect = async () => {
 //traer todos los libros
 const traerAllLibros = async () => {
   try {
-    const consulta = "SELECT * FROM libros";
+    const consulta = "SELECT * FROM libros ORDER BY id_libro";
     const { rows } = await pool.query(consulta);
     console.log("libros encontrados - ok");
     return rows;

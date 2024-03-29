@@ -3,18 +3,10 @@ import jsonLibros from "../assets/libros.json";
 import autores from './Autores';
 import generos from './Generos';
 import editoriales from './Editoriales';
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { MyContext } from "../componentes/context/MyContext";
 
 const AdmVisor = () => {
-
-  
-
-  const {
-    productos,
-    setProductos
-  } = useContext(MyContext);
-  console.log(productos);
 
   const [titulo, setTitulo] = useState('');
   const [autor, setAutor] = useState('');
@@ -25,16 +17,55 @@ const AdmVisor = () => {
   const [precio, setPrecio] = useState(0);
   const [stock, setStock] = useState(0);
   const [id,setId] = useState();
+  const [productos, setProductos] = useState([]);
+  const [autores, setAutores] = useState([]);
+  const [editoriales, setEditoriales] = useState([]);
+  const [generos, setGeneros] = useState([]);
+
+  console.log(generos)
+
+  const getData = async () => {
+    const response = await fetch('http://localhost:3000/libros');
+    const data = await response.json();
+    setProductos(data);
+
+    const resAutor = await fetch('http://localhost:3000/select/autor');
+    const dataAutor = await resAutor.json();
+    setAutores(dataAutor);
+
+    const resEditorial = await fetch('http://localhost:3000/select/editorial');
+    const dataEditorial = await resEditorial.json();
+    setEditoriales(dataEditorial);
+
+    const resGenero = await fetch('http://localhost:3000/select/genero');
+    const dataGenero = await resGenero.json();
+    setGeneros(dataGenero);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  
+
+  /*const {
+    productos,
+    setProductos
+  } = useContext(MyContext);
+  console.log(productos);
+  */
+
+  
 
   // carga libro al modal
   const cargaLibro = (libro) => {
     setId(libro.id)   
     setTitulo(libro.titulo);
-    setAutor(libro.autor);
-    setGenero(libro.genero);
-    setEditorial(libro.editorial);
-    setResena(libro.resenia);
-    setUrlimg(libro.urlimg);
+    setAutor(libro.id_autor);
+    setGenero(libro.id_genero);
+    setEditorial(libro.id_editorial);
+    setResena(libro.resena);
+    setUrlimg(libro.urlimagen);
     setPrecio(libro.precio);
     setStock(libro.stock);
   };
@@ -46,7 +77,7 @@ const AdmVisor = () => {
       id: id,
       titulo:`${titulo}`,
       autor:`${autor}`,
-      resenia:`${resena}`,
+      resena:`${resena}`,
       editorial:`${editorial}`,      
       genero:`${genero}`,
       urlimg: `${urlimg}`,
@@ -78,7 +109,7 @@ const AdmVisor = () => {
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Titulo</th>
-            <th scope="col">Autor</th>
+            {/* <th scope="col">Autor</th> */}
             <th scope="col">Stock</th>
             <th scope="col"></th>
             <th scope="col"></th>            
@@ -86,10 +117,10 @@ const AdmVisor = () => {
         </thead>
         <tbody>
           {productos.map(libro => (
-            <tr key={libro.id}>
-            <th scope="row">{libro.id}</th>
+            <tr key={libro.id_libro}>
+            <th scope="row">{libro.id_libro}</th>
             <td>{libro.titulo}</td>
-            <td>{libro.autor}</td>
+            {/* <td>{libro.id_autor}</td> */}
             <td>{libro.stock}</td>
             <td>
               <i className="fa fa-edit" 
@@ -141,8 +172,8 @@ const AdmVisor = () => {
                           value={autor}
                           required>
                             <option selected></option>
-                            {autores.map((autor, index) => (
-                              <option key={index} value={autor}>{autor}</option>
+                            {autores.map((autor) => (
+                              <option key={autor.id_autor} value={autor.id_autor}>{autor.nombre}</option>
                             ))}                
                         </select>
                       </div>
@@ -157,8 +188,8 @@ const AdmVisor = () => {
                           value={genero}
                           required >
                             <option selected></option>
-                            {generos.map((genero, index) => (
-                              <option key={index} value={genero}>{genero}</option>
+                            {generos.map((genero) => (
+                              <option key={genero.id_genero} value={genero.id_genero}>{genero.genero}</option>
                             ))} 
                         </select>
                       </div>
@@ -173,8 +204,8 @@ const AdmVisor = () => {
                           value={editorial}
                           required >
                             <option selected></option>
-                            {editoriales.map((editorial, index) => (
-                              <option key={index} value={editorial}>{editorial}</option>
+                            {editoriales.map((editorial) => (
+                              <option key={editorial.id_editorial} value={editorial.id_editorial}>{editorial.nombre}</option>
                             ))}
                         </select>
                       </div>
