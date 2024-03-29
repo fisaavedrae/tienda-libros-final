@@ -8,6 +8,7 @@ import "../assets/css/carro.css";
 import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
 import DetalleOrden from "../componentes/DetalleOrden.jsx";
+import { URLBASE } from "../config/index.js";
 
 const Ordenes = (props) => {
   const { formatPrecio, mensaje, setMensaje } = useContext(MyContext);
@@ -31,7 +32,7 @@ const Ordenes = (props) => {
       }
       //console.log("token micuenta: ", token);
       const response = await fetch(
-        "http://localhost:3000/ordenes",
+        URLBASE + "/ordenes",
         {
           method: "GET",
           headers: {
@@ -68,7 +69,7 @@ const Ordenes = (props) => {
       }
       //console.log("token micuenta: ", token);
       const response = await fetch(
-        "http://localhost:3000/ordenes/" + id_orden,
+        URLBASE + "/ordenes/" + id_orden,
         {
           method: "GET",
           headers: {
