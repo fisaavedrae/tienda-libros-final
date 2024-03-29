@@ -14,6 +14,7 @@ import Ordenes from "./pages/Ordenes.jsx";
 import Admin from "./pages/Admin.jsx";
 import CheckOut from "./pages/CheckOut.jsx";
 import MyAccount from "./pages/MyAccount.jsx";
+import { URLBASE } from "./config/index.js";
 
 //import jsonLibros from "./assets/libros.json";
 
@@ -113,9 +114,7 @@ function App() {
         filtros.page +
         "&order_by=" +
         filtros.order_by;
-      const response = await fetch(
-        "http://localhost:3000/libros/filtros?" + parametros
-      );
+      const response = await fetch(URLBASE + "/libros/filtros?" + parametros);
       const data = await response.json();
       //console.log("order:", filtros.order_by);
       //console.log(data);
