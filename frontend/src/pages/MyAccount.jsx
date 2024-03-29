@@ -21,6 +21,7 @@ const MyAccount = () => {
   async function getUsuario() {
     try {
       const token = window.sessionStorage.getItem("token");
+
       console.log("token", token);
       if (!token) {
         console.log("no hay token");
