@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { MyContext } from "../componentes/context/MyContext.jsx";
 import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
+import { URLBASE } from "../config/index.js";
 
 const MyAccount = () => {
   const { usuario, setUsuario } = useContext(MyContext);
@@ -29,7 +30,7 @@ const MyAccount = () => {
       }
       //console.log("token micuenta: ", token);
       const response = await fetch(
-        "http://localhost:3000/usuarios/id",
+        URLBASE + "/usuarios/id",
         {
           method: "GET",
           headers: {

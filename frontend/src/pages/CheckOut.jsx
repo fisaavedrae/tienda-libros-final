@@ -4,6 +4,7 @@ import { MyContext } from "../componentes/context/MyContext.jsx";
 
 import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
+import { URLBASE } from "../config/index.js";
 const CheckOut = () => {
   const {
     carro,
@@ -37,7 +38,7 @@ const CheckOut = () => {
       //console.log("token checkout: ", token);
 
       const response = await fetch(
-        "http://localhost:3000/ordenes?total=" + totalOrden + "&envio=" + envio,
+        URLBASE + "/ordenes?total=" + totalOrden + "&envio=" + envio,
         {
           method: "POST",
           headers: {
