@@ -1,10 +1,7 @@
-import '../assets/css/admin.css'
-import jsonLibros from "../assets/libros.json";
-import autores from './Autores';
-import generos from './Generos';
-import editoriales from './Editoriales';
+import '../assets/css/admin.css';
 import React, { useState, useContext, useEffect } from 'react';
 import { MyContext } from "../componentes/context/MyContext";
+import { URLBASE } from "../config/index";
 
 const AdmVisor = () => {
 
@@ -13,31 +10,31 @@ const AdmVisor = () => {
   const [genero, setGenero] = useState('');
   const [editorial, setEditorial] = useState('');
   const [resena, setResena] = useState('');
-  const [urlimg, setUrlimg] = useState('');
+  const [urlimagen, setUrlimagen] = useState('');
   const [precio, setPrecio] = useState(0);
   const [stock, setStock] = useState(0);
   const [id,setId] = useState();
-  const [productos, setProductos] = useState([]);
+  const [libros, setLibros] = useState([]);
   const [autores, setAutores] = useState([]);
   const [editoriales, setEditoriales] = useState([]);
   const [generos, setGeneros] = useState([]);
 
-  console.log(generos)
+  //console.log(generos)
 
   const getData = async () => {
-    const response = await fetch('http://localhost:3000/libros');
+    const response = await fetch(URLBASE + '/libros');
     const data = await response.json();
-    setProductos(data);
+    setLibros(data);
 
-    const resAutor = await fetch('http://localhost:3000/select/autor');
+    const resAutor = await fetch(URLBASE + '/autores');
     const dataAutor = await resAutor.json();
     setAutores(dataAutor);
 
-    const resEditorial = await fetch('http://localhost:3000/select/editorial');
+    const resEditorial = await fetch(URLBASE + '/editoriales');
     const dataEditorial = await resEditorial.json();
     setEditoriales(dataEditorial);
 
-    const resGenero = await fetch('http://localhost:3000/select/genero');
+    const resGenero = await fetch(URLBASE + '/generos');
     const dataGenero = await resGenero.json();
     setGeneros(dataGenero);
   };
@@ -59,46 +56,76 @@ const AdmVisor = () => {
 
   // carga libro al modal
   const cargaLibro = (libro) => {
-    setId(libro.id)   
+    setId(libro.id_libro)   
     setTitulo(libro.titulo);
     setAutor(libro.id_autor);
     setGenero(libro.id_genero);
     setEditorial(libro.id_editorial);
     setResena(libro.resena);
-    setUrlimg(libro.urlimagen);
+    setUrlimagen(libro.urlimagen);
     setPrecio(libro.precio);
     setStock(libro.stock);
   };
 
-  const modificarLibro = (e) => {
-    e.preventDefault();
+  const modificarLibro = async (id) => {
+    //e.preventDefault();
 
     const libroModificado = {
-      id: id,
       titulo:`${titulo}`,
-      autor:`${autor}`,
       resena:`${resena}`,
-      editorial:`${editorial}`,      
-      genero:`${genero}`,
-      urlimg: `${urlimg}`,
+      urlimagen:`${urlimagen}`,
       precio: Number(precio),
-      stock: Number(stock)
+      stock: Number(stock),
+      destacado: false,
+      id_autor:Number(autor),      
+      id_editorial:Number(editorial),      
+      id_genero:Number(genero)      
     };
-    //console.log(Number(libroModificado.id));
+    //console.log(libroModificado);
 
-    setProductos(productos.map(item => {
-      if (item.id === Number(libroModificado.id)) {
-        return {...item, ...libroModificado}
-      }
-      return item
-    }));
-
-    //alert("Libro modificado");    
+    const token = window.sessionStorage.getItem("token");
+    if (!token) {
+      console.log("no hay token");
+      //navigate("/home");
+    } else {
+      //console.log(token);
+      console.log(id)
+      const response = await fetch(
+        URLBASE + "/libros/" + id.id,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,            
+          },
+          body: JSON.stringify(libroModificado),
+        }
+      );
+    };   
   };
+  
 
-  const borrarLibro = (id) => {    
-    setProductos(productos.filter(item => item.id !== id));
-    //alert("Libro eliminado");
+
+// ---- borrado ok ------------------------------------------------------------
+  const borrarLibro = async (id) => {
+    const token = window.sessionStorage.getItem("token");
+    if (!token) {
+      console.log("no hay token");
+      //navigate("/home");
+    } else {
+      //console.log(token);
+      console.log(id)
+      const response = await fetch(
+        URLBASE + "/libros/" + id,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+    };
   };
 
 
@@ -109,18 +136,18 @@ const AdmVisor = () => {
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Titulo</th>
-            {/* <th scope="col">Autor</th> */}
+            <th scope="col">Precio</th>
             <th scope="col">Stock</th>
             <th scope="col"></th>
             <th scope="col"></th>            
           </tr>
         </thead>
         <tbody>
-          {productos.map(libro => (
+          {libros.map(libro => (
             <tr key={libro.id_libro}>
             <th scope="row">{libro.id_libro}</th>
             <td>{libro.titulo}</td>
-            {/* <td>{libro.id_autor}</td> */}
+            <td>{libro.precio}</td>
             <td>{libro.stock}</td>
             <td>
               <i className="fa fa-edit" 
@@ -130,7 +157,7 @@ const AdmVisor = () => {
             </td>
             <td>
               <i className="fa fa-trash-can" 
-                onClick={()=>borrarLibro(libro.id)}></i>              
+                onClick={()=>borrarLibro(libro.id_libro)}></i>              
             </td>
           </tr>
           ))}                    
@@ -149,7 +176,7 @@ const AdmVisor = () => {
             {/* -----cuerpo */}
             <div className="modal-body">              
               <div className="container boxadd">    
-                <form className="row" onSubmit={modificarLibro}>            
+                <form className="row">            
                   <div className="col-md-12">
                     <div className="row mb-3">
                       <label className="col-sm-2 col-form-label col-form-label-sm">Titulo</label>
@@ -228,8 +255,8 @@ const AdmVisor = () => {
                         <input 
                             type="text" 
                             className="form-control form-control-sm input-adm"
-                            onChange={(e) => setUrlimg(e.target.value)}
-                            value={urlimg}
+                            onChange={(e) => setUrlimagen(e.target.value)}
+                            value={urlimagen}
                             required />
                       </div>
                     </div>
@@ -267,7 +294,7 @@ const AdmVisor = () => {
                     </div>
                   </div>
                   <div className="col-6">
-                    <button type="submit" className="btn btn-filtros mb-5" data-bs-dismiss="modal">Modificar</button>
+                    <button type="buttom" className="btn btn-filtros mb-5" data-bs-dismiss="modal" onClick={()=>modificarLibro({id})}>Modificar</button>
                   </div>
                 </form>
               </div>
