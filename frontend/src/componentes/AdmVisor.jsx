@@ -14,12 +14,12 @@ const AdmVisor = () => {
   const [precio, setPrecio] = useState(0);
   const [stock, setStock] = useState(0);
   const [id,setId] = useState();
+  const [checkbox, setCheckbox] = useState('');
   const [libros, setLibros] = useState([]);
   const [autores, setAutores] = useState([]);
   const [editoriales, setEditoriales] = useState([]);
   const [generos, setGeneros] = useState([]);
 
-  //console.log(generos)
 
   const getData = async () => {
     const response = await fetch(URLBASE + '/libros');
@@ -52,6 +52,10 @@ const AdmVisor = () => {
   console.log(productos);
   */
 
+  const estadoCheckbox = (e) => {
+    setCheckbox(e.target.checked);
+    //console.log(e.target.checked);
+  };
   
 
   // carga libro al modal
@@ -65,8 +69,10 @@ const AdmVisor = () => {
     setUrlimagen(libro.urlimagen);
     setPrecio(libro.precio);
     setStock(libro.stock);
+    setCheckbox(libro.destacado);
   };
 
+  // *** modificar OK ***
   const modificarLibro = async (id) => {
     //e.preventDefault();
 
@@ -76,7 +82,7 @@ const AdmVisor = () => {
       urlimagen:`${urlimagen}`,
       precio: Number(precio),
       stock: Number(stock),
-      destacado: false,
+      destacado:JSON.parse(checkbox),
       id_autor:Number(autor),      
       id_editorial:Number(editorial),      
       id_genero:Number(genero)      
@@ -106,7 +112,7 @@ const AdmVisor = () => {
   
 
 
-// ---- borrado ok ------------------------------------------------------------
+// *** borrado OK ***
   const borrarLibro = async (id) => {
     const token = window.sessionStorage.getItem("token");
     if (!token) {
@@ -289,7 +295,13 @@ const AdmVisor = () => {
                   </div>                              
                   <div className="col-6">
                     <div className="form-check form-switch">
-                      <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+                      <input 
+                      className="form-check-input" 
+                      type="checkbox" 
+                      role="switch" 
+                      id="flexSwitchCheckChecked"
+                      checked={checkbox} 
+                      onChange={estadoCheckbox}/>
                       <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Destacado</label>
                     </div>
                   </div>
