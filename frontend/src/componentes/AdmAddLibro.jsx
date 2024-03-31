@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import '../assets/css/admin.css';
+import { AdminContextAPI } from "../componentes/context/AdminContextAPI";
 import { URLBASE } from "../config/index";
 
 const AdmAddLibro = () => {
@@ -13,6 +14,8 @@ const AdmAddLibro = () => {
   const [precio, setPrecio] = useState(0);
   const [stock, setStock] = useState(0);
   const [checkbox, setCheckbox] = useState(false);
+
+  const { getData } = useContext(AdminContextAPI);
 
   const estadoCheckbox = (e) => {
     setCheckbox(e.target.checked);
@@ -33,7 +36,7 @@ const AdmAddLibro = () => {
       editorial:`${editorial}`,      
       genero:`${genero}`      
     };
-    console.log(nuevoLibro);
+    //console.log(nuevoLibro);
 
     const token = window.sessionStorage.getItem("token");
     if (!token) {
@@ -53,7 +56,9 @@ const AdmAddLibro = () => {
           body: JSON.stringify(nuevoLibro),
         }
       );
-    };    
+      console.log(response)
+    };
+    getData()   
     
     setTitulo('');
     setAutor('');
