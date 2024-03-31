@@ -1,9 +1,10 @@
 const { Pool } = require("pg");
 require("dotenv").config();
 /*
+let pool;
 if ((process.env.IS_PROD = 1)) {
   console.log("conectando a base de datos en produccion");
-  const pool = new Pool({
+  pool = new Pool({
     connectionString: process.env.POSTGRES_URL,
   });
 } else {
@@ -18,6 +19,7 @@ if ((process.env.IS_PROD = 1)) {
   });
 }
 */
+console.log("first");
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
 });

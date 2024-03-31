@@ -115,7 +115,7 @@ function App() {
         "&order_by=" +
         filtros.order_by;
       console.log("VITE_URLBASE", import.meta.env.VITE_URLBASE);
-      console.log("URLBASE", URLBASE);
+      //console.log("URLBASE", URLBASE);
       const response = await fetch(
         import.meta.env.VITE_URLBASE + "/libros/filtros?" + parametros
       );
