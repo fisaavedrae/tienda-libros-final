@@ -2,11 +2,13 @@ const { Pool } = require("pg");
 require("dotenv").config();
 let pool;
 if ((process.env.IS_PROD = 1)) {
-  const pool = new Pool({
+  console.log("conectando a base de datos en produccion");
+  pool = new Pool({
     connectionString: process.env.POSTGRES_URL,
   });
 } else {
-  const pool = new Pool({
+  console.log("conectando a base de datos en dev");
+  pool = new Pool({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
     database: process.env.DB_DATABASE,
@@ -15,4 +17,5 @@ if ((process.env.IS_PROD = 1)) {
     allowExitOnIdle: true,
   });
 }
+
 module.exports = pool;
