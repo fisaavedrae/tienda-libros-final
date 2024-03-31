@@ -242,6 +242,7 @@ const validaExisteCampo = async (campo) => {
 
 // CRUD admin ------------------------------------------------------------------------
 //agregar un libro
+/*
 const agregaLibro = async (titulo, resena, urlimagen, precio, stock, destacado, id_autor, id_editorial, id_genero) => {
   try {
     const consulta = "INSERT INTO libros (id_libro, titulo, resena, urlimagen, precio, stock, destacado, id_autor, id_editorial, id_genero) VALUES (DEFAULT, $1, $2, $3, $4, $5, $6, $7, $8, $9)";
@@ -252,6 +253,31 @@ const agregaLibro = async (titulo, resena, urlimagen, precio, stock, destacado, 
     
   } catch (error) {
     console.log(error);
+  }
+};
+*/
+const agregaLibro = async (titulo, resena, urlimagen, precio, stock, destacado, autor, editorial, genero) => {
+  try {
+    const consultaAutor = `INSERT INTO autor (id_autor, nombre) VALUES (DEFAULT, $1) RETURNING id_autor`;
+    const idAutor = await pool.query(consultaAutor, [autor]);
+    const id_autor =idAutor.rows[0].id_autor;
+
+    const consultaEditorial = `INSERT INTO editorial (id_editorial, nombre) VALUES (DEFAULT, $1) RETURNING id_editorial`;
+    const idEditorial = await pool.query(consultaEditorial, [editorial]);
+    const id_editorial =idEditorial.rows[0].id_editorial;
+
+    const consultaGenero = `INSERT INTO genero (id_genero, genero) VALUES (DEFAULT, $1) RETURNING id_genero`;     
+    const idGenero = await pool.query(consultaGenero, [genero]);
+    const id_genero =idGenero.rows[0].id_genero; 
+
+    const consulta = "INSERT INTO libros (ID_LIBRO, titulo, resena, urlimagen, precio, stock, destacado, id_autor, id_editorial, id_genero) VALUES (DEFAULT, $1, $2, $3, $4, $5, $6, $7, $8, $9)";
+    const values = [titulo, resena, urlimagen, precio, stock, destacado, id_autor, id_editorial, id_genero];
+    const { rowCount } = await pool.query(consulta, values);
+    console.log("libro agregado");
+    return rowCount;
+
+  } catch (error) {
+    console.error('Error al agregar libro:', error);
   }
 };
 

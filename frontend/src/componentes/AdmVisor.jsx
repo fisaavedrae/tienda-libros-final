@@ -132,6 +132,7 @@ const AdmVisor = () => {
         }
       );
     };
+    getData();
   };
 
 
