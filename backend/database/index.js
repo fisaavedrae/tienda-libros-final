@@ -1,6 +1,6 @@
 const { Pool } = require("pg");
 require("dotenv").config();
-
+let pool;
 if ((process.env.IS_PROD = 1)) {
   const pool = new Pool({
     connectionString: process.env.POSTGRES_URL,
