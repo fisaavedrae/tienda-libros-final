@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { MyContext } from "./context/MyContext.jsx";
 import "../assets/css/filtros.css";
 import Spinner from "./Spinner.jsx";
-import { URLBASE } from "../config/index.js";
+//import { URLBASE } from "../config/index.js";
 //import autores from "../assets/autores.js";
 //import generos from "../assets/generos.js";
 //import editoriales from "../assets/editoriales.js";
@@ -35,7 +35,7 @@ const Filtros = () => {
     //console.log("filtros", filtros);
     try {
       setIsLoadingAutores(false);
-      const response = await fetch(URLBASE + "/autores");
+      const response = await fetch(import.meta.env.VITE_URLBASE + "/autores");
       const data = await response.json();
       //console.log("readapi autores");
       setAutores(data);
@@ -45,7 +45,9 @@ const Filtros = () => {
     }
     try {
       setIsLoadingEditoriales(false);
-      const response = await fetch(URLBASE + "/editoriales");
+      const response = await fetch(
+        import.meta.env.VITE_URLBASE + "/editoriales"
+      );
       const data = await response.json();
       //console.log("readapi autores");
       setEditoriales(data);
@@ -55,7 +57,7 @@ const Filtros = () => {
     }
     try {
       setIsLoadingGeneros(false);
-      const response = await fetch(URLBASE + "/generos");
+      const response = await fetch(import.meta.env.VITE_URLBASE + "/generos");
       const data = await response.json();
       //console.log("readapi autores");
       setGeneros(data);
