@@ -13,9 +13,9 @@ const {
 
 //agregar un libro
 const postLibroController = async (req, res, next) => {
-  const { titulo, resena, urlimagen, precio, stock, destacado, id_autor, id_editorial, id_genero } = req.body;
+  const { titulo, resena, urlimagen, precio, stock, destacado, autor, editorial, genero } = req.body;
   try {
-    const data = await agregaLibro(titulo, resena, urlimagen, precio, stock, destacado, id_autor, id_editorial, id_genero);
+    const data = await agregaLibro(titulo, resena, urlimagen, precio, stock, destacado, autor, editorial, genero);
     if (data === 1) {
       res.status(200).json({
         status: "Success",
