@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { MyContext } from "../componentes/context/MyContext.jsx";
 import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
-import { URLBASE } from "../config/index.js";
+//import { URLBASE } from "../config/index.js";
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 const initialForm = {
@@ -97,7 +97,7 @@ const Registro = (props) => {
   async function llamarAPICreacionUsuario() {
     try {
       const response = await fetch(
-        URLBASE + "/registro",
+        import.meta.env.VITE_URLBASE + "/registro",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

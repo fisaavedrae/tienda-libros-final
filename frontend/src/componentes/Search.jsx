@@ -19,11 +19,11 @@ const Search = (props) => {
     enviarFormularioBusqueda(buscador, productos);
     console.log("render handleChange");
   };
-  const enviarFormularioBusqueda = (busqueda, paises) => {
+  const enviarFormularioBusqueda = (busqueda, libros) => {
     //setDatos(datosBack)
     let textoBusqueda = "";
-    const resultadoBusqueda = productos.filter(function (pais) {
-      textoBusqueda = pais.titulo.toUpperCase();
+    const resultadoBusqueda = productos.filter(function (libro) {
+      textoBusqueda = libro.titulo.toUpperCase();
       if (textoBusqueda.includes(busqueda.toUpperCase())) {
         return true;
       }
