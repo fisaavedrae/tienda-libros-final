@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import '../assets/css/admin.css';
 import { AdminContextAPI } from "../componentes/context/AdminContextAPI";
-import { URLBASE } from "../config/index";
+//import { URLBASE } from "../config/index";
 
 const AdmAddLibro = () => {
 
@@ -15,11 +15,18 @@ const AdmAddLibro = () => {
   const [stock, setStock] = useState(0);
   const [checkbox, setCheckbox] = useState(false);
 
-  const { getData } = useContext(AdminContextAPI);
+  const { getData, alerta, setAlerta } = useContext(AdminContextAPI);
 
   const estadoCheckbox = (e) => {
     setCheckbox(e.target.checked);
     //console.log(e.target.checked);
+  };
+
+  const clear = () => {
+    setAlerta({
+      class: "alert alert-light fade",
+      msg: ""
+    });
   };
 
   const crearLibro = async (e) => {      
@@ -36,7 +43,7 @@ const AdmAddLibro = () => {
       editorial:`${editorial}`,      
       genero:`${genero}`      
     };
-    //console.log(nuevoLibro);
+    //console.log(nuevoLibro);    
 
     const token = window.sessionStorage.getItem("token");
     if (!token) {
@@ -46,7 +53,7 @@ const AdmAddLibro = () => {
       console.log(token);
       //console.log(id)
       const response = await fetch(
-        URLBASE + "/libros",
+        import.meta.env.VITE_URLBASE + "/libros",
         {
           method: "POST",
           headers: {
@@ -56,8 +63,24 @@ const AdmAddLibro = () => {
           body: JSON.stringify(nuevoLibro),
         }
       );
-      console.log(response)
+      const data = await response.json();
+      //console.log(data.message);
+      if (data.status !== "Bad Request") {
+        //console.log("data", data);
+        setAlerta({
+          class: "alert alert-success fade show",
+          msg: "Libro agregado con exito"
+        });
+      } else {
+        setAlerta({
+          class: "alert alert-danger fade show",
+          msg: data.message
+        });
+        console.log(data);
+      }
     };
+
+
     getData()   
     
     setTitulo('');
@@ -75,7 +98,7 @@ const AdmAddLibro = () => {
   return (
     <div className="container">
       {/* ----- disparador */}
-      <button type="button" className="btn btn-filtros" data-bs-toggle="modal" data-bs-target="#addModal">
+      <button type="button" className="btn btn-filtros" data-bs-toggle="modal" data-bs-target="#addModal" onClick={clear}>
         Agregar Libro
       </button>
       {/* ----- modal de creacion de libro*/}
@@ -208,6 +231,9 @@ const AdmAddLibro = () => {
                   </div>
                   <div className="col-6">
                     <button type="submit" className="btn btn-filtros mb-5">Agregar</button>
+                  </div>
+                  <div className={alerta.class} role="alert">
+                    {alerta.msg}
                   </div>
                 </form>
               </div>
