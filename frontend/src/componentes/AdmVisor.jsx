@@ -1,6 +1,6 @@
 import '../assets/css/admin.css';
-import React, { useState, useContext, useEffect } from 'react';
-import { MyContext } from "../componentes/context/MyContext";
+import React, { useState, useContext } from 'react';
+import { AdminContextAPI } from "../componentes/context/AdminContextAPI";
 import { URLBASE } from "../config/index";
 
 const AdmVisor = () => {
@@ -12,52 +12,17 @@ const AdmVisor = () => {
   const [resena, setResena] = useState('');
   const [urlimagen, setUrlimagen] = useState('');
   const [precio, setPrecio] = useState(0);
-  const [stock, setStock] = useState(0);
+  const [stock, setStock] = useState(0);  
+  const [checkbox, setCheckbox] = useState(false);
   const [id,setId] = useState();
-  const [checkbox, setCheckbox] = useState('');
-  const [libros, setLibros] = useState([]);
-  const [autores, setAutores] = useState([]);
-  const [editoriales, setEditoriales] = useState([]);
-  const [generos, setGeneros] = useState([]);
 
-
-  const getData = async () => {
-    const response = await fetch(URLBASE + '/libros');
-    const data = await response.json();
-    setLibros(data);
-
-    const resAutor = await fetch(URLBASE + '/autores');
-    const dataAutor = await resAutor.json();
-    setAutores(dataAutor);
-
-    const resEditorial = await fetch(URLBASE + '/editoriales');
-    const dataEditorial = await resEditorial.json();
-    setEditoriales(dataEditorial);
-
-    const resGenero = await fetch(URLBASE + '/generos');
-    const dataGenero = await resGenero.json();
-    setGeneros(dataGenero);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  
-
-  /*const {
-    productos,
-    setProductos
-  } = useContext(MyContext);
-  console.log(productos);
-  */
+  const { libros, autores, editoriales, generos, getData } = useContext(AdminContextAPI);
 
   const estadoCheckbox = (e) => {
     setCheckbox(e.target.checked);
     //console.log(e.target.checked);
   };
   
-
   // carga libro al modal
   const cargaLibro = (libro) => {
     setId(libro.id_libro)   
@@ -107,6 +72,7 @@ const AdmVisor = () => {
           body: JSON.stringify(libroModificado),
         }
       );
+      console.log(response)
     };   
   };
   
