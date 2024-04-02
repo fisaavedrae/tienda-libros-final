@@ -9,41 +9,47 @@ const AdminProviderAPI = ({ children}) => {
   const [autores, setAutores] = useState([]);
   const [editoriales, setEditoriales] = useState([]);
   const [generos, setGeneros] = useState([]);
-  const [alerta,setAlerta] = useState({ class:"alert alert-light fade", msg:""});    
+  const [alerta,setAlerta] = useState({ class:"", msg:"" });
   
+  const clear = () => {
+    setAlerta({
+      class:"alert alert-info fade show text-center",
+      msg:"Todos los campos son Obligatorios"
+    });
+  };  
 
-    const getData = async () => {
-      const response = await fetch(import.meta.env.VITE_URLBASE + '/libros');
-      const data = await response.json();
-      setLibros(data);
+  const getData = async () => {
+    const response = await fetch(import.meta.env.VITE_URLBASE + '/libros');
+    const data = await response.json();
+    setLibros(data);
   
-      const resAutor = await fetch(import.meta.env.VITE_URLBASE + '/autores');
-      const dataAutor = await resAutor.json();
-      setAutores(dataAutor);
+    const resAutor = await fetch(import.meta.env.VITE_URLBASE + '/autores');
+    const dataAutor = await resAutor.json();
+    setAutores(dataAutor);
   
-      const resEditorial = await fetch(import.meta.env.VITE_URLBASE + '/editoriales');
-      const dataEditorial = await resEditorial.json();
-      setEditoriales(dataEditorial);
+    const resEditorial = await fetch(import.meta.env.VITE_URLBASE + '/editoriales');
+    const dataEditorial = await resEditorial.json();
+    setEditoriales(dataEditorial);
   
-      const resGenero = await fetch(import.meta.env.VITE_URLBASE + '/generos');
-      const dataGenero = await resGenero.json();
-      setGeneros(dataGenero);
-    };  
-    useEffect(() => {
-      getData();
-    }, []);           
+    const resGenero = await fetch(import.meta.env.VITE_URLBASE + '/generos');
+    const dataGenero = await resGenero.json();
+    setGeneros(dataGenero);
+  };  
+  useEffect(() => {
+    getData();
+  }, []);           
 
-    return (
-        <AdminContextAPI.Provider value={{ 
-          libros, setLibros,
-          autores, setAutores,
-          editoriales, setEditoriales,
-          generos, setGeneros,
-          alerta, setAlerta,
-          getData }}>
-            {children}
-        </AdminContextAPI.Provider>
-    );
+  return (
+    <AdminContextAPI.Provider value={{ 
+      libros, setLibros,
+      autores, setAutores,
+      editoriales, setEditoriales,
+      generos, setGeneros,
+      alerta, setAlerta,
+      getData, clear }}>
+        {children}
+    </AdminContextAPI.Provider>
+  );
 };
 
 export default AdminProviderAPI;
