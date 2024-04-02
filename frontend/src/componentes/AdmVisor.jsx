@@ -1,7 +1,7 @@
 import '../assets/css/admin.css';
 import React, { useState, useContext } from 'react';
 import { AdminContextAPI } from "../componentes/context/AdminContextAPI";
-import { URLBASE } from "../config/index";
+//import { URLBASE } from "../config/index";
 
 const AdmVisor = () => {
 
@@ -16,11 +16,18 @@ const AdmVisor = () => {
   const [checkbox, setCheckbox] = useState(false);
   const [id,setId] = useState();
 
-  const { libros, autores, editoriales, generos, getData } = useContext(AdminContextAPI);
+  const { libros, autores, editoriales, generos, getData, alerta, setAlerta } = useContext(AdminContextAPI);
 
   const estadoCheckbox = (e) => {
     setCheckbox(e.target.checked);
     //console.log(e.target.checked);
+  };
+
+  const clear = () => {
+    setAlerta({
+      class: "alert alert-light fade",
+      msg: ""
+    });
   };
   
   // carga libro al modal
@@ -35,11 +42,12 @@ const AdmVisor = () => {
     setPrecio(libro.precio);
     setStock(libro.stock);
     setCheckbox(libro.destacado);
+    clear();
   };
 
   // *** modificar OK ***
-  const modificarLibro = async (id) => {
-    //e.preventDefault();
+  const modificarLibro = async (e) => {
+    e.preventDefault();
 
     const libroModificado = {
       titulo:`${titulo}`,
@@ -60,9 +68,8 @@ const AdmVisor = () => {
       //navigate("/home");
     } else {
       //console.log(token);
-      console.log(id)
       const response = await fetch(
-        URLBASE + "/libros/" + id.id,
+        import.meta.env.VITE_URLBASE + "/libros/" + id,
         {
           method: "PUT",
           headers: {
@@ -72,8 +79,21 @@ const AdmVisor = () => {
           body: JSON.stringify(libroModificado),
         }
       );
-      console.log(response)
-    };   
+      const data = await response.json();
+      if (data.status !== "Bad Request") {
+        //console.log("data", data);
+        setAlerta({
+          class: "alert alert-success fade show",
+          msg: "Libro modificado con exito"
+        });
+      } else {
+        setAlerta({
+          class: "alert alert-danger fade show",
+          msg: data.message
+        });
+      }
+    };
+    getData();  
   };
   
 
@@ -88,7 +108,7 @@ const AdmVisor = () => {
       //console.log(token);
       console.log(id)
       const response = await fetch(
-        URLBASE + "/libros/" + id,
+        import.meta.env.VITE_URLBASE + "/libros/" + id,
         {
           method: "DELETE",
           headers: {
@@ -97,6 +117,8 @@ const AdmVisor = () => {
           },
         }
       );
+      const dataBorra = await response.json();
+      console.log(dataBorra);
     };
     getData();
   };
@@ -149,7 +171,7 @@ const AdmVisor = () => {
             {/* -----cuerpo */}
             <div className="modal-body">              
               <div className="container boxadd">    
-                <form className="row">            
+                <form className="row" onSubmit={modificarLibro}>            
                   <div className="col-md-12">
                     <div className="row mb-3">
                       <label className="col-sm-2 col-form-label col-form-label-sm">Titulo</label>
@@ -273,7 +295,10 @@ const AdmVisor = () => {
                     </div>
                   </div>
                   <div className="col-6">
-                    <button type="buttom" className="btn btn-filtros mb-5" data-bs-dismiss="modal" onClick={()=>modificarLibro({id})}>Modificar</button>
+                    <button type="submit" className="btn btn-filtros mb-5">Modificar</button>
+                  </div>
+                  <div className={alerta.class} role="alert">
+                    {alerta.msg}
                   </div>
                 </form>
               </div>
