@@ -16,18 +16,14 @@ const AdmVisor = () => {
   const [checkbox, setCheckbox] = useState(false);
   const [id,setId] = useState();
 
-  const { libros, autores, editoriales, generos, getData, alerta, setAlerta } = useContext(AdminContextAPI);
+  const { 
+    libros, autores, editoriales, generos,
+    getData, clear, alerta, setAlerta 
+  } = useContext(AdminContextAPI);
 
   const estadoCheckbox = (e) => {
     setCheckbox(e.target.checked);
     //console.log(e.target.checked);
-  };
-
-  const clear = () => {
-    setAlerta({
-      class: "alert alert-light fade",
-      msg: ""
-    });
   };
   
   // carga libro al modal
@@ -83,15 +79,15 @@ const AdmVisor = () => {
       if (data.status !== "Bad Request") {
         //console.log("data", data);
         setAlerta({
-          class: "alert alert-success fade show",
+          class: "alert alert-success fade show text-center",
           msg: "Libro modificado con exito"
         });
       } else {
         setAlerta({
-          class: "alert alert-danger fade show",
+          class: "alert alert-danger fade show text-center",
           msg: data.message
         });
-      }
+      };
     };
     getData();  
   };

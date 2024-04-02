@@ -15,18 +15,11 @@ const AdmAddLibro = () => {
   const [stock, setStock] = useState(0);
   const [checkbox, setCheckbox] = useState(false);
 
-  const { getData, alerta, setAlerta } = useContext(AdminContextAPI);
+  const { getData, clear, alerta, setAlerta } = useContext(AdminContextAPI);
 
   const estadoCheckbox = (e) => {
     setCheckbox(e.target.checked);
     //console.log(e.target.checked);
-  };
-
-  const clear = () => {
-    setAlerta({
-      class: "alert alert-light fade",
-      msg: ""
-    });
   };
 
   const crearLibro = async (e) => {      
@@ -68,20 +61,20 @@ const AdmAddLibro = () => {
       if (data.status !== "Bad Request") {
         //console.log("data", data);
         setAlerta({
-          class: "alert alert-success fade show",
+          class: "alert alert-success fade show text-center",
           msg: "Libro agregado con exito"
         });
       } else {
         setAlerta({
-          class: "alert alert-danger fade show",
+          class: "alert alert-danger fade show text-center",
           msg: data.message
         });
         console.log(data);
-      }
+      };
     };
 
 
-    getData()   
+    getData();  
     
     setTitulo('');
     setAutor('');
@@ -127,7 +120,6 @@ const AdmAddLibro = () => {
                       </div>
                     </div>
                   </div>
-
                   <div className="col-md-12">
                     <div className="row mb-3">
                       <label className="col-sm-2 col-form-label col-form-label-sm">Autor</label>
@@ -166,8 +158,7 @@ const AdmAddLibro = () => {
                         required />
                       </div>
                     </div>
-                  </div> 
-                  
+                  </div>                   
                   <div className="col-md-12 mb-3">
                     <label  className="form-label col-form-label-sm">Reseña</label>
                     <textarea 
@@ -242,7 +233,6 @@ const AdmAddLibro = () => {
         </div>
       </div>
     </div>
-
   );
 };
 
