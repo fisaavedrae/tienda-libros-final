@@ -22,6 +22,7 @@ function App() {
   const [total, setTotal] = useState(0);
   const [totalOrder, setTotalOrder] = useState(0);
   const [productos, setProductos] = useState([]);
+  const [datosBack, setDatosdatosBack] = useState([]);
   const [librosFiltrados, setLibrosFiltrados] = useState([]);
   const [carro, setCarro] = useState([]);
   const [orderProducts, setOrderProducts] = useState([]);
@@ -114,7 +115,7 @@ function App() {
         filtros.page +
         "&order_by=" +
         filtros.order_by;
-      console.log("VITE_URLBASE", import.meta.env.VITE_URLBASE);
+      //console.log("VITE_URLBASE", import.meta.env.VITE_URLBASE);
       //console.log("URLBASE", URLBASE);
       const response = await fetch(
         import.meta.env.VITE_URLBASE + "/libros/filtros?" + parametros
@@ -126,9 +127,10 @@ function App() {
         //console.log("data", data);
         setMensaje("");
         setProductos(data);
+        setDatosdatosBack(data);
       } else {
         setProductos(""); //
-
+        setDatosdatosBack("");
         setMensaje(data.message);
         //console.log(mensaje);
       }
@@ -147,6 +149,8 @@ function App() {
           setTotal,
           productos,
           setProductos,
+          datosBack,
+          setDatosdatosBack,
           carro,
           setCarro,
           orderProducts,

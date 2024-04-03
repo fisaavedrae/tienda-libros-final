@@ -25,6 +25,7 @@ const SideCart = (props) => {
     const indice = carro.findIndex((item) => item.id_libro === obj.id_libro);
     if (carro[indice].qty > 1) {
       setTotal(Number(total) - Number(obj.precio));
+
       carro[indice].qty = Number(obj.qty) - 1;
       //console.log("carro antes de eliminar", carro);
       setCarro([...carro]);
@@ -35,6 +36,7 @@ const SideCart = (props) => {
   function sumarUnidadItemCarro(obj) {
     const indice = carro.findIndex((item) => item.id_libro === obj.id_libro);
     setTotal(Number(total) + Number(obj.precio));
+
     carro[indice].qty = Number(obj.qty) + 1;
     //console.log("carro antes de eliminar", carro);
     setCarro([...carro]);
@@ -89,6 +91,7 @@ const SideCart = (props) => {
 
           <div className="divider mt-3"></div>
           <div className="container-fluid d-flex flex-column gap-3 mt-3">
+            {console.log("carro antes", carro)}
             {carro.map((libro, index) => (
               <div
                 key={index}

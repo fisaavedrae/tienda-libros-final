@@ -1,0 +1,93 @@
+Date : 2024-03-31 19:47:34
+Directory : /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend
+Total : 51 files,  7802 codes, 134 comments, 267 blanks, all 8203 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JSON           |          4 |      4,566 |          0 |          4 |      4,570 |
+| JavaScript JSX |         29 |      2,644 |        124 |        209 |      2,977 |
+| CSS            |          8 |        455 |          8 |         25 |        488 |
+| JavaScript     |          5 |         64 |          2 |         10 |         76 |
+| Markdown       |          2 |         42 |          0 |         17 |         59 |
+| HTML           |          1 |         29 |          0 |          2 |         31 |
+| XML            |          2 |          2 |          0 |          0 |          2 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                            | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                               |         51 |      7,802 |        134 |        267 |      8,203 |
+| . (Files)                                                                                                       |          6 |      4,117 |          1 |         23 |      4,141 |
+| public                                                                                                          |          1 |          1 |          0 |          0 |          1 |
+| src                                                                                                             |         44 |      3,684 |        133 |        244 |      4,061 |
+| src (Files)                                                                                                     |          4 |        395 |         17 |         22 |        434 |
+| src/assets                                                                                                      |         12 |        842 |          4 |         26 |        872 |
+| src/assets (Files)                                                                                              |          6 |        584 |          0 |          8 |        592 |
+| src/assets/css                                                                                                  |          6 |        258 |          4 |         18 |        280 |
+| src/componentes                                                                                                 |         16 |      1,477 |         59 |        106 |      1,642 |
+| src/componentes (Files)                                                                                         |         15 |      1,475 |         59 |        104 |      1,638 |
+| src/componentes/context                                                                                         |          1 |          2 |          0 |          2 |          4 |
+| src/config                                                                                                      |          1 |          1 |          1 |          2 |          4 |
+| src/pages                                                                                                       |         11 |        969 |         52 |         88 |      1,109 |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                        | language       | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/README 2.md                           | Markdown       |         41 |          0 |         16 |         57 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/README.md                             | Markdown       |          1 |          0 |          1 |          2 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/index.html                            | HTML           |         29 |          0 |          2 |         31 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/package-lock.json                     | JSON           |      4,013 |          0 |          1 |      4,014 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/package.json                          | JSON           |         28 |          0 |          1 |         29 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/public/vite.svg                       | XML            |          1 |          0 |          0 |          1 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/App.css                           | CSS            |        197 |          4 |          6 |        207 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/App.jsx                           | JavaScript JSX |        186 |         13 |         13 |        212 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/autores.js                 | JavaScript     |         30 |          0 |          2 |         32 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/admin.css              | CSS            |         25 |          1 |          2 |         28 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/carro.css              | CSS            |         39 |          0 |          2 |         41 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/filtros.css            | CSS            |         26 |          0 |          1 |         27 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/form.css               | CSS            |         32 |          0 |          2 |         34 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/hover.css              | CSS            |         79 |          0 |         10 |         89 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/paginacion.css         | CSS            |         57 |          3 |          1 |         61 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/editoriales.js             | JavaScript     |         16 |          0 |          2 |         18 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/generos.js                 | JavaScript     |         12 |          0 |          2 |         14 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/libros.json                | JSON           |        442 |          0 |          1 |        443 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/ordenes.json               | JSON           |         83 |          0 |          1 |         84 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/react.svg                  | XML            |          1 |          0 |          0 |          1 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/AdmAddLibro.jsx       | JavaScript JSX |        187 |          7 |         12 |        206 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/AdmVisor.jsx          | JavaScript JSX |        278 |         19 |         25 |        322 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Autores.jsx           | JavaScript JSX |         39 |          0 |          1 |         40 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/CabeceraGrilla.jsx    | JavaScript JSX |         49 |          3 |          4 |         56 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/DetalleOrden.jsx      | JavaScript JSX |         91 |          1 |          7 |         99 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Editoriales.jsx       | JavaScript JSX |         38 |          0 |          1 |         39 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Filtros.jsx           | JavaScript JSX |        236 |         20 |         12 |        268 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Footer.jsx            | JavaScript JSX |         17 |          0 |          4 |         21 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Generos.jsx           | JavaScript JSX |         12 |          0 |          1 |         13 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/GrillaLibros.jsx      | JavaScript JSX |         95 |          2 |          8 |        105 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Header.jsx            | JavaScript JSX |        151 |          2 |          7 |        160 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Paginacion.jsx        | JavaScript JSX |         58 |          1 |          8 |         67 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Search.jsx            | JavaScript JSX |         80 |          2 |          4 |         86 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/SideCart.jsx          | JavaScript JSX |        131 |          2 |          6 |        139 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Spinner.jsx           | JavaScript JSX |         13 |          0 |          4 |         17 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/context/MyContext.jsx | JavaScript JSX |          2 |          0 |          2 |          4 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/config/index.js                   | JavaScript     |          1 |          1 |          2 |          4 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/index.css                         | CSS            |          0 |          0 |          1 |          1 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/main.jsx                          | JavaScript JSX |         12 |          0 |          2 |         14 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Admin.jsx                   | JavaScript JSX |         15 |          0 |          4 |         19 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Carrito.jsx                 | JavaScript JSX |         15 |          0 |          4 |         19 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/CerrarSesion.jsx            | JavaScript JSX |         23 |          0 |          5 |         28 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/CheckOut.jsx                | JavaScript JSX |        164 |          5 |         10 |        179 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/DetalleLibro.jsx            | JavaScript JSX |         75 |          0 |          8 |         83 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Home.jsx                    | JavaScript JSX |         20 |          0 |          5 |         25 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Login.jsx                   | JavaScript JSX |        149 |          8 |         16 |        173 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/MyAccount.jsx               | JavaScript JSX |        106 |          9 |          6 |        121 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Ordenes.jsx                 | JavaScript JSX |        158 |         15 |         11 |        184 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Pago.jsx                    | JavaScript JSX |         23 |          0 |          5 |         28 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Registro.jsx                | JavaScript JSX |        221 |         15 |         14 |        250 |
+| /Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/vite.config.js                        | JavaScript     |          5 |          1 |          2 |          8 |
+| Total                                                                                                           |                |      7,802 |        134 |        267 |      8,203 |
++-----------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

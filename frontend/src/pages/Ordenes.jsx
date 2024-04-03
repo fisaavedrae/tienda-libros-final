@@ -17,7 +17,7 @@ const Ordenes = (props) => {
 
   const navigate = useNavigate();
   useEffect(() => {
-    getDetalleOrden();
+    getDetalleOrden(1);
     getOrdenes();
     //console.log("entre al useefect");
   }, []);
@@ -68,6 +68,7 @@ const Ordenes = (props) => {
         navigate("/home");
       }
       //console.log("token micuenta: ", token);
+      console.log("id_orden", id_orden);
       const response = await fetch(
         import.meta.env.VITE_URLBASE + "/ordenes/" + id_orden,
         {

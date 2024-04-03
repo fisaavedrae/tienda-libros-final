@@ -1,11 +1,28 @@
 import PropTypes from "prop-types";
 
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { MyContext } from "../componentes/context/MyContext.jsx";
 
 import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
 const CerrarSesion = (props) => {
+  const {
+    productos,
+    setProductos,
+    carro,
+    setCarro,
+    total,
+    setTotal,
+    formatPrecio,
+    prefijoImagen,
+  } = useContext(MyContext);
+
+  //setCarro([]);
+  //setTotal(0);
   window.sessionStorage.clear();
+  localStorage.clear();
+  window.location.href = "/";
   return (
     <>
       <Header />

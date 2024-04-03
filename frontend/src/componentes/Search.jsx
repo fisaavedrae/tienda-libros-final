@@ -6,6 +6,8 @@ const Search = (props) => {
   const {
     productos,
     setProductos,
+    datosBack,
+    setDatosdatosBack,
     carro,
     setCarro,
     total,
@@ -15,14 +17,17 @@ const Search = (props) => {
     buscador,
     setBuscador,
   } = useContext(MyContext);
+
   const handleChange = (e) => {
     enviarFormularioBusqueda(buscador, productos);
     console.log("render handleChange");
   };
   const enviarFormularioBusqueda = (busqueda, libros) => {
-    //setDatos(datosBack)
+    setProductos(...[datosBack]);
+    //console.log("datosBack", datosBack);
+    //console.log("productos", productos);
     let textoBusqueda = "";
-    const resultadoBusqueda = productos.filter(function (libro) {
+    const resultadoBusqueda = datosBack.filter(function (libro) {
       textoBusqueda = libro.titulo.toUpperCase();
       if (textoBusqueda.includes(busqueda.toUpperCase())) {
         return true;
