@@ -27,11 +27,6 @@ const Paginacion = ({ cantidadLibros }) => {
       <div className="container d-flex justify-content-center">
         <nav aria-label="Page navigation example">
           <ul className="paginations gap-2">
-            <li className="page-items">
-              <a className="page-link" href="#">
-                <i className="fa-solid fa-chevron-left"></i>
-              </a>
-            </li>
             {paginationNumbers.map((number, index) => (
               <li key={index} className="page-items">
                 <Link
@@ -46,12 +41,6 @@ const Paginacion = ({ cantidadLibros }) => {
                 </Link>
               </li>
             ))}
-
-            <li className="page-item">
-              <a className="page-link" href="#">
-                <i className="fa-solid fa-chevron-right"></i>
-              </a>
-            </li>
           </ul>
         </nav>
       </div>

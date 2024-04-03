@@ -1,0 +1,69 @@
+"filename", "language", "JSON", "XML", "Markdown", "JavaScript", "JavaScript JSX", "CSS", "HTML", "SQL", "comment", "blank", "total"
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/README.md", "Markdown", 0, 0, -306, 0, 0, 0, 0, 0, 0, -88, -394
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/controllers/admin.js", "JavaScript", 0, 0, 0, -132, 0, 0, 0, 0, -6, -23, -161
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/controllers/index.js", "JavaScript", 0, 0, 0, -288, 0, 0, 0, 0, -9, -15, -312
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/database/consultas.js", "JavaScript", 0, 0, 0, -328, 0, 0, 0, 0, -15, -35, -378
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/database/index.js", "JavaScript", 0, 0, 0, -7, 0, 0, 0, 0, -19, -2, -28
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/middlewares/admin.js", "JavaScript", 0, 0, 0, -124, 0, 0, 0, 0, 0, -8, -132
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/middlewares/index.js", "JavaScript", 0, 0, 0, -611, 0, 0, 0, 0, -20, -17, -648
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/middlewares/validarAdmin.js", "JavaScript", 0, 0, 0, -29, 0, 0, 0, 0, -2, -6, -37
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/package-lock.json", "JSON", -4999, 0, 0, 0, 0, 0, 0, 0, 0, -1, -5000
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/package.json", "JSON", -28, 0, 0, 0, 0, 0, 0, 0, 0, -1, -29
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/routes/admin.js", "JavaScript", 0, 0, 0, -25, 0, 0, 0, 0, -1, -6, -32
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/routes/index.js", "JavaScript", 0, 0, 0, -44, 0, 0, 0, 0, -2, -4, -50
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/scripts_bd/script_crear_tablas.sql", "SQL", 0, 0, 0, 0, 0, 0, 0, -88, 0, -9, -97
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/server/index.js", "JavaScript", 0, 0, 0, -12, 0, 0, 0, 0, -1, -5, -18
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/tests/server.spec.js", "JavaScript", 0, 0, 0, -66, 0, 0, 0, 0, -5, -10, -81
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/backend/utils/index.js", "JavaScript", 0, 0, 0, -38, 0, 0, 0, 0, 0, -2, -40
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/README 2.md", "Markdown", 0, 0, 41, 0, 0, 0, 0, 0, 0, 16, 57
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/README.md", "Markdown", 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/index.html", "HTML", 0, 0, 0, 0, 0, 0, 29, 0, 0, 2, 31
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/package-lock.json", "JSON", 4013, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4014
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/package.json", "JSON", 28, 0, 0, 0, 0, 0, 0, 0, 0, 1, 29
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/public/vite.svg", "XML", 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/App.css", "CSS", 0, 0, 0, 0, 0, 197, 0, 0, 4, 6, 207
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/App.jsx", "JavaScript JSX", 0, 0, 0, 0, 186, 0, 0, 0, 13, 13, 212
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/autores.js", "JavaScript", 0, 0, 0, 30, 0, 0, 0, 0, 0, 2, 32
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/admin.css", "CSS", 0, 0, 0, 0, 0, 25, 0, 0, 1, 2, 28
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/carro.css", "CSS", 0, 0, 0, 0, 0, 39, 0, 0, 0, 2, 41
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/filtros.css", "CSS", 0, 0, 0, 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/form.css", "CSS", 0, 0, 0, 0, 0, 32, 0, 0, 0, 2, 34
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/hover.css", "CSS", 0, 0, 0, 0, 0, 79, 0, 0, 0, 10, 89
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/css/paginacion.css", "CSS", 0, 0, 0, 0, 0, 57, 0, 0, 3, 1, 61
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/editoriales.js", "JavaScript", 0, 0, 0, 16, 0, 0, 0, 0, 0, 2, 18
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/generos.js", "JavaScript", 0, 0, 0, 12, 0, 0, 0, 0, 0, 2, 14
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/libros.json", "JSON", 442, 0, 0, 0, 0, 0, 0, 0, 0, 1, 443
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/ordenes.json", "JSON", 83, 0, 0, 0, 0, 0, 0, 0, 0, 1, 84
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/assets/react.svg", "XML", 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/AdmAddLibro.jsx", "JavaScript JSX", 0, 0, 0, 0, 187, 0, 0, 0, 7, 12, 206
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/AdmVisor.jsx", "JavaScript JSX", 0, 0, 0, 0, 278, 0, 0, 0, 19, 25, 322
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Autores.jsx", "JavaScript JSX", 0, 0, 0, 0, 39, 0, 0, 0, 0, 1, 40
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/CabeceraGrilla.jsx", "JavaScript JSX", 0, 0, 0, 0, 49, 0, 0, 0, 3, 4, 56
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/DetalleOrden.jsx", "JavaScript JSX", 0, 0, 0, 0, 91, 0, 0, 0, 1, 7, 99
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Editoriales.jsx", "JavaScript JSX", 0, 0, 0, 0, 38, 0, 0, 0, 0, 1, 39
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Filtros.jsx", "JavaScript JSX", 0, 0, 0, 0, 236, 0, 0, 0, 20, 12, 268
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Footer.jsx", "JavaScript JSX", 0, 0, 0, 0, 17, 0, 0, 0, 0, 4, 21
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Generos.jsx", "JavaScript JSX", 0, 0, 0, 0, 12, 0, 0, 0, 0, 1, 13
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/GrillaLibros.jsx", "JavaScript JSX", 0, 0, 0, 0, 95, 0, 0, 0, 2, 8, 105
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Header.jsx", "JavaScript JSX", 0, 0, 0, 0, 151, 0, 0, 0, 2, 7, 160
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Paginacion.jsx", "JavaScript JSX", 0, 0, 0, 0, 58, 0, 0, 0, 1, 8, 67
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Search.jsx", "JavaScript JSX", 0, 0, 0, 0, 80, 0, 0, 0, 2, 4, 86
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/SideCart.jsx", "JavaScript JSX", 0, 0, 0, 0, 131, 0, 0, 0, 2, 6, 139
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/Spinner.jsx", "JavaScript JSX", 0, 0, 0, 0, 13, 0, 0, 0, 0, 4, 17
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/componentes/context/MyContext.jsx", "JavaScript JSX", 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 4
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/config/index.js", "JavaScript", 0, 0, 0, 1, 0, 0, 0, 0, 1, 2, 4
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/index.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/main.jsx", "JavaScript JSX", 0, 0, 0, 0, 12, 0, 0, 0, 0, 2, 14
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Admin.jsx", "JavaScript JSX", 0, 0, 0, 0, 15, 0, 0, 0, 0, 4, 19
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Carrito.jsx", "JavaScript JSX", 0, 0, 0, 0, 15, 0, 0, 0, 0, 4, 19
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/CerrarSesion.jsx", "JavaScript JSX", 0, 0, 0, 0, 23, 0, 0, 0, 0, 5, 28
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/CheckOut.jsx", "JavaScript JSX", 0, 0, 0, 0, 164, 0, 0, 0, 5, 10, 179
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/DetalleLibro.jsx", "JavaScript JSX", 0, 0, 0, 0, 75, 0, 0, 0, 0, 8, 83
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Home.jsx", "JavaScript JSX", 0, 0, 0, 0, 20, 0, 0, 0, 0, 5, 25
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Login.jsx", "JavaScript JSX", 0, 0, 0, 0, 149, 0, 0, 0, 8, 16, 173
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/MyAccount.jsx", "JavaScript JSX", 0, 0, 0, 0, 106, 0, 0, 0, 9, 6, 121
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Ordenes.jsx", "JavaScript JSX", 0, 0, 0, 0, 158, 0, 0, 0, 15, 11, 184
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Pago.jsx", "JavaScript JSX", 0, 0, 0, 0, 23, 0, 0, 0, 0, 5, 28
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/src/pages/Registro.jsx", "JavaScript JSX", 0, 0, 0, 0, 221, 0, 0, 0, 15, 14, 250
+"/Users/felipesaavedra/Documents/Bootcamp/Fullstack/tienda-libros/frontend/vite.config.js", "JavaScript", 0, 0, 0, 5, 0, 0, 0, 0, 1, 2, 8
+"Total", "-", -461, 2, -264, -1640, 2644, 455, 29, -88, 54, 35, 766
