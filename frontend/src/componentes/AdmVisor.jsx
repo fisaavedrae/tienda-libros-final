@@ -1,7 +1,6 @@
 import '../assets/css/admin.css';
 import React, { useState, useContext } from 'react';
 import { AdminContextAPI } from "../componentes/context/AdminContextAPI";
-//import { URLBASE } from "../config/index";
 
 const AdmVisor = () => {
 
@@ -23,7 +22,6 @@ const AdmVisor = () => {
 
   const estadoCheckbox = (e) => {
     setCheckbox(e.target.checked);
-    //console.log(e.target.checked);
   };
   
   // carga libro al modal
@@ -77,7 +75,6 @@ const AdmVisor = () => {
       );
       const data = await response.json();
       if (data.status !== "Bad Request") {
-        //console.log("data", data);
         setAlerta({
           class: "alert alert-success fade show text-center",
           msg: "Libro modificado con exito"

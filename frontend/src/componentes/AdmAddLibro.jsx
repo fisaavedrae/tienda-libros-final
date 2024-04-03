@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import '../assets/css/admin.css';
 import { AdminContextAPI } from "../componentes/context/AdminContextAPI";
-//import { URLBASE } from "../config/index";
 
 const AdmAddLibro = () => {
 
@@ -19,7 +18,6 @@ const AdmAddLibro = () => {
 
   const estadoCheckbox = (e) => {
     setCheckbox(e.target.checked);
-    //console.log(e.target.checked);
   };
 
   const crearLibro = async (e) => {      
@@ -44,7 +42,6 @@ const AdmAddLibro = () => {
       //navigate("/home");
     } else {
       console.log(token);
-      //console.log(id)
       const response = await fetch(
         import.meta.env.VITE_URLBASE + "/libros",
         {
@@ -57,9 +54,7 @@ const AdmAddLibro = () => {
         }
       );
       const data = await response.json();
-      //console.log(data.message);
       if (data.status !== "Bad Request") {
-        //console.log("data", data);
         setAlerta({
           class: "alert alert-success fade show text-center",
           msg: "Libro agregado con exito"
