@@ -1,6 +1,6 @@
 # Tienda de Libros
 
-![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-orange)
+![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESARROLLO-orange)
 
 **Desarrolladores :** _Felipe Saavedra - Ricardo Barrientos_
 
@@ -268,9 +268,10 @@ PORT=3000
   ```
 
 
-- **ATENCION :** Las siguientes 3 rutas requieren que el Token sea de un usuario con rol de administrador. Para obtener este Token use la ruta POST: /login con las siguientes credenciales.
+> [!IMPORTANT]
+> Las siguientes 3 rutas requieren que el Token sea de un usuario con rol de administrador. Para obtener este Token use la ruta POST: /login con las siguientes credenciales.
 
-  ```json
+ ```json
   {
     "email": "rimar.basaa@gmail.com",
     "password": "rimar"
