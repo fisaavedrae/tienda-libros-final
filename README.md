@@ -274,17 +274,6 @@ PORT=3000
 > [!IMPORTANT]
 > Las siguientes 3 rutas requieren que el Token sea de un usuario con rol de administrador. Para obtener este Token use la ruta POST: /login con las siguientes credenciales.
 
-```json
-{
-  "email": "rimar.basaa@gmail.com",
-  "password": "rimar"
-}
-```
-
-
-> [!IMPORTANT]
-> Las siguientes 3 rutas requieren que el Token sea de un usuario con rol de administrador. Para obtener este Token use la ruta POST: /login con las siguientes credenciales.
-
  ```json
   {
     "email": "rimar.basaa@gmail.com",
