@@ -19,20 +19,6 @@ _[Ir a la Tienda...](https://tienda-libros-final-front.onrender.com/)_
 5. [Presentación de Proyecto](#presentación-de-proyecto) _Pendiente_
 6. [Conclusiones](#conclusiones) _Pendiente_
 
-## Presentacion y Prototipo
-
-
-
-### Indice
-1. [Presentacion y prototipo](#presentacion-y-prototipo)
-2. [Desarrollo del frontend](#desarrollo-del-frontend)
-3. [Desarrollo del Backend](#desarrollo-del-backend)
-    - [Consideraciones](#consideraciones)
-    - [API - Documentación de rutas](#api-documentacion-de-rutas)
-4. [Integracion y despliegue](#integracion-y-despliegue)
-    - [Credenciales para Uso](#credenciales-para-uso)
-6. [Presentación de Proyecto](#presentación-de-proyecto) _Pendiente_
-7. [Conclusiones](#conclusiones) _Pendiente_
 
 
 ## Presentacion y Prototipo
