@@ -18,6 +18,7 @@ _[Ir a la Tienda...](https://tienda-libros-final-front.onrender.com/)_
 5. [Presentación de Proyecto](#presentación-de-proyecto) _Pendiente_
 6. [Conclusiones](#conclusiones) _Pendiente_
 
+
 ## Presentacion y Prototipo
 
 ### Indice
@@ -31,6 +32,7 @@ _[Ir a la Tienda...](https://tienda-libros-final-front.onrender.com/)_
    - [Credenciales para Uso](#credenciales-para-uso)
 5. [Presentación de Proyecto](#presentación-de-proyecto) _Pendiente_
 6. [Conclusiones](#conclusiones) _Pendiente_
+
 
 ## Presentacion y Prototipo
 
@@ -282,6 +284,7 @@ PORT=3000
 > [!IMPORTANT]
 > Las siguientes 3 rutas requieren que el Token sea de un usuario con rol de administrador. Para obtener este Token use la ruta POST: /login con las siguientes credenciales.
 
+
 ```json
 {
   "email": "rimar.basaa@gmail.com",
@@ -298,6 +301,15 @@ PORT=3000
   "password": "rimar"
 }
 ```
+
+ ```json
+  {
+    "email": "rimar.basaa@gmail.com",
+    "password": "rimar"
+  }
+  ```
+
+
 
 - POST: /libros
 
@@ -382,6 +394,7 @@ PORT=3000
 
 ## Integracion y Despliegue
 
+
 Este cuarto hito marca un paso crucial en el proyecto, ya que implica la integración y despliegue de todos sus componentes en internet. El Frontend, el Backend y la base de datos PostgreSQL.
 
 Para lograr este objetivo, se optó por utilizar una plataforma de servicio en la nube, como [Render](https://render.com/), que facilitó el proceso de despliegue tanto de Frontend, Backend y Base Datos garantizando un entorno estable y escalable para nuestra aplicación.
@@ -396,6 +409,7 @@ Con la integración y despliegue exitosos de todos los componentes en internet, 
 
 ## Integracion y Despliegue
 
+
 Este cuarto hito marca un paso crucial en el proyecto, ya que implica la integración y despliegue de todos sus componentes en internet. El Frontend, el Backend y la base de datos PostgreSQL.
 
 Para lograr este objetivo, se optó por utilizar una plataforma de servicio en la nube, como [Render](https://render.com/), que facilitó el proceso de despliegue tanto de Frontend, Backend y Base Datos garantizando un entorno estable y escalable para nuestra aplicación.
@@ -406,7 +420,12 @@ y el correcto consumo de las API desde el backend, asegurando que todas las inte
 Posteriormente, se confirmó que en el servicio elegido para la base de datos, estuvieran gestionando efectivamente todos los datos, garantizando la integridad y
 disponibilidad de la información necesaria para el correcto funcionamiento de la aplicación.
 
+
 Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una
+
+
+    
+Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una 
 
 experiencia fluida y confiable.
 
