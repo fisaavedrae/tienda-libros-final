@@ -91,7 +91,6 @@ const SideCart = (props) => {
 
           <div className="divider mt-3"></div>
           <div className="container-fluid d-flex flex-column gap-3 mt-3">
-            {console.log("carro antes", carro)}
             {carro.map((libro, index) => (
               <div
                 key={index}

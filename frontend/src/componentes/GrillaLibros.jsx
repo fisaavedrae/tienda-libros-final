@@ -37,6 +37,19 @@ const GrillaLibros = () => {
   if (productos[0]?.cantidadlibros) {
     cantidadLibros = productos[0].cantidadlibros;
   }
+  let isCarrito = false;
+  if (window.sessionStorage.getItem("rol")) {
+    // Restaura el contenido al campo de texto
+    const rolUsuario = window.sessionStorage.getItem("rol");
+    //console.log("Rol usuario:", rolUsuario);
+    isCarrito = false;
+    if (rolUsuario === "admin") {
+      isCarrito = true;
+    }
+    if (rolUsuario === "usuario") {
+      isCarrito = true;
+    }
+  }
 
   return (
     <>
@@ -46,7 +59,10 @@ const GrillaLibros = () => {
         </div>
         <div id="libros">
           <div className="GrillaProductos">
-            <CabeceraGrilla cantidadLibros={productos.length} />
+            <CabeceraGrilla
+              cantidadLibros={productos.length}
+              isCarrito={isCarrito}
+            />
             <div className="row row-cols-1 row-cols-md-3 g-4">
               {!isLoadingGrilla && <Spinner />}
               {cantidadLibros === 0 && (
@@ -68,10 +84,13 @@ const GrillaLibros = () => {
                         />
                         <div className="overlay d-flex flex-column justify-content-end align-items-center">
                           <div className="d-flex flex-row justify-content-between gap-3 fs-3 ">
-                            <i
-                              className="fa-solid fa-cart-shopping mb-4"
-                              onClick={() => agregarCarrito(1, product)}
-                            />
+                            {isCarrito && (
+                              <i
+                                className="fa-solid fa-cart-shopping mb-4"
+                                onClick={() => agregarCarrito(1, product)}
+                              />
+                            )}
+
                             <i
                               className="fa-solid fa-magnifying-glass-plus"
                               onClick={() => irAProducto(product.id_libro)}

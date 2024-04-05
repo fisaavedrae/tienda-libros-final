@@ -6,6 +6,20 @@
 
 _[Ir a la Tienda...](https://tienda-libros-final-front.onrender.com/)_
 
+### Indice
+
+1. [Presentacion y prototipo](#presentacion-y-prototipo)
+2. [Desarrollo del frontend](#desarrollo-del-frontend)
+3. [Desarrollo del Backend](#desarrollo-del-backend)
+   - [Consideraciones](#consideraciones)
+   - [API - Documentación de rutas](#api-documentacion-de-rutas)
+4. [Integracion y despliegue](#integracion-y-despliegue)
+   - [Credenciales para Uso](#credenciales-para-uso)
+5. [Presentación de Proyecto](#presentación-de-proyecto) _Pendiente_
+6. [Conclusiones](#conclusiones) _Pendiente_
+
+
+## Presentacion y Prototipo
 
 ### Indice
 
@@ -20,10 +34,9 @@ _[Ir a la Tienda...](https://tienda-libros-final-front.onrender.com/)_
 6. [Conclusiones](#conclusiones) _Pendiente_
 
 
-
 ## Presentacion y Prototipo
 
-- [Link de descargar de documento PDF:](https://tienda-libros-final-front.onrender.com/)
+- [Live app:](https://tienda-libros-final-front.onrender.com/)
 
 ## Desarrollo del Frontend
 
@@ -43,7 +56,6 @@ Para el segundo hito de nuestro proyecto, nos enfocamos en el desarrollo de la a
 
 Con estos pasos, logramos desarrollar un frontend robusto y altamente funcional que cumplió con los objetivos planteados en nuestra propuesta inicial.
 
-
 ## Desarrollo del Backend
 
 Durante el tercer hito de nuestro proyecto, nos enfocamos en el desarrollo del backend utilizando Express. A continuación, describimos los pasos que seguimos para alcanzar nuestros objetivos:
@@ -61,7 +73,6 @@ Durante el tercer hito de nuestro proyecto, nos enfocamos en el desarrollo del b
 6. **Pruebas de Rutas con Supertest y Thunder Client**: Utilizamos el paquete supertest para realizar pruebas a diferentes rutas de nuestra API REST, asegurándonos de que funcionen correctamente y respondan adecuadamente a las solicitudes. Además, empleamos la extensión Thunder Client para realizar pruebas adicionales de las diferentes rutas de nuestra API REST, garantizando su correcto funcionamiento.
 
 Con estos pasos, logramos desarrollar un backend sólido y confiable que cumplió con los requisitos de nuestra aplicación y facilitó una comunicación eficiente entre el frontend y el backend.
-
 
 ### Consideraciones
 
@@ -270,9 +281,26 @@ PORT=3000
   http://localhost:3000/libros
   ```
 
+> [!IMPORTANT]
+> Las siguientes 3 rutas requieren que el Token sea de un usuario con rol de administrador. Para obtener este Token use la ruta POST: /login con las siguientes credenciales.
+
+
+```json
+{
+  "email": "rimar.basaa@gmail.com",
+  "password": "rimar"
+}
+```
 
 > [!IMPORTANT]
 > Las siguientes 3 rutas requieren que el Token sea de un usuario con rol de administrador. Para obtener este Token use la ruta POST: /login con las siguientes credenciales.
+
+```json
+{
+  "email": "rimar.basaa@gmail.com",
+  "password": "rimar"
+}
+```
 
  ```json
   {
@@ -280,6 +308,7 @@ PORT=3000
     "password": "rimar"
   }
   ```
+
 
 
 - POST: /libros
@@ -363,20 +392,41 @@ PORT=3000
   http://localhost:3000/libros/1
   ```
 
+## Integracion y Despliegue
+
+
+Este cuarto hito marca un paso crucial en el proyecto, ya que implica la integración y despliegue de todos sus componentes en internet. El Frontend, el Backend y la base de datos PostgreSQL.
+
+Para lograr este objetivo, se optó por utilizar una plataforma de servicio en la nube, como [Render](https://render.com/), que facilitó el proceso de despliegue tanto de Frontend, Backend y Base Datos garantizando un entorno estable y escalable para nuestra aplicación.
+
+Durante este proceso, se llevaron a cabo pruebas exhaustivas de todas las funcionalidades del proyecto desde la aplicación cliente. Se verificó la persistencia de datos
+y el correcto consumo de las API desde el backend, asegurando que todas las interacciones funcionaran según lo esperado.
+
+Posteriormente, se confirmó que en el servicio elegido para la base de datos, estuvieran gestionando efectivamente todos los datos, garantizando la integridad y
+disponibilidad de la información necesaria para el correcto funcionamiento de la aplicación.
+
+Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una
 
 ## Integracion y Despliegue
-  
+
+
 Este cuarto hito marca un paso crucial en el proyecto, ya que implica la integración y despliegue de todos sus componentes en internet. El Frontend, el Backend y la base de datos PostgreSQL.
-    
+
 Para lograr este objetivo, se optó por utilizar una plataforma de servicio en la nube, como [Render](https://render.com/), que facilitó el proceso de despliegue tanto de Frontend, Backend y Base Datos garantizando un entorno estable y escalable para nuestra aplicación.
-    
-Durante este proceso, se llevaron a cabo pruebas exhaustivas de todas las funcionalidades del proyecto desde la aplicación cliente. Se verificó la persistencia de datos 
+
+Durante este proceso, se llevaron a cabo pruebas exhaustivas de todas las funcionalidades del proyecto desde la aplicación cliente. Se verificó la persistencia de datos
 y el correcto consumo de las API desde el backend, asegurando que todas las interacciones funcionaran según lo esperado.
-    
-Posteriormente, se confirmó que en el servicio elegido para la base de datos, estuvieran gestionando efectivamente todos los datos, garantizando la integridad y 
+
+Posteriormente, se confirmó que en el servicio elegido para la base de datos, estuvieran gestionando efectivamente todos los datos, garantizando la integridad y
 disponibilidad de la información necesaria para el correcto funcionamiento de la aplicación.
+
+
+Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una
+
+
     
 Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una 
+
 experiencia fluida y confiable.
 
 ### Credenciales para Uso
@@ -393,4 +443,3 @@ Si bien usted puede crear su propia cuenta de Usuario, aqui le proporcionamos 2 
   user : pablo.neruda@gmail.com
   pass : neruda
   ```
-
