@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { MyContext } from "../componentes/context/MyContext.jsx";
 
@@ -11,10 +11,29 @@ const DetalleLibro = () => {
   const { id } = useParams();
   const [cant, setCant] = useState(1);
   const [error, setError] = useState(false);
+  const [libro, setLibro] = useState({});
 
+  /*
   const libro = productos.find(
     (producto) => Number(producto.id_libro) === Number(id)
   );
+*/
+  useEffect(() => {
+    cargarLibro(id);
+  }, []);
+  const cargarLibro = async (id_libro) => {
+    try {
+      const response = await fetch(
+        import.meta.env.VITE_URLBASE + "/libros/" + id_libro
+      );
+      const data = await response.json();
+      setLibro(data[0]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //console.log(libro);
   const handleCarrito = (libro) => {
     console.log("cant", cant);
     if (cant < 1) {
@@ -24,6 +43,20 @@ const DetalleLibro = () => {
       agregarCarrito(cant, libro);
     }
   };
+
+  let isCarrito = false;
+  if (window.sessionStorage.getItem("rol")) {
+    // Restaura el contenido al campo de texto
+    const rolUsuario = window.sessionStorage.getItem("rol");
+    //console.log("Rol usuario:", rolUsuario);
+    isCarrito = false;
+    if (rolUsuario === "admin") {
+      isCarrito = true;
+    }
+    if (rolUsuario === "usuario") {
+      isCarrito = true;
+    }
+  }
 
   return (
     <>
@@ -47,24 +80,26 @@ const DetalleLibro = () => {
             <div className=" fw-bold pe-2">Editorial: </div>
             <div className="div">{libro.editorial}</div>
           </div>
-          <div className="d-flex gap-2 align-items-center mt-5">
-            <span>Cant</span>
-            <input
-              type="number"
-              id="inputCant"
-              className=""
-              value={cant}
-              onChange={(e) => setCant(e.target.value)}
-            />
-            <button
-              onClick={() => {
-                handleCarrito(libro);
-              }}
-              className="btn btn-filtros"
-            >
-              Agregar al carro
-            </button>
-          </div>
+          {isCarrito && (
+            <div className="d-flex gap-2 align-items-center mt-5">
+              <span>Cant</span>
+              <input
+                type="number"
+                id="inputCant"
+                className=""
+                value={cant}
+                onChange={(e) => setCant(e.target.value)}
+              />
+              <button
+                onClick={() => {
+                  handleCarrito(libro);
+                }}
+                className="btn btn-filtros"
+              >
+                Agregar al carro
+              </button>
+            </div>
+          )}
           {error && (
             <div className="alert alert-danger w-50 mt-3" role="alert">
               La cantidad debe ser mayor o igual a cero.

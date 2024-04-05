@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { MyContext } from "../componentes/context/MyContext.jsx";
 
-const CabeceraGrilla = ({ cantidadLibros }) => {
+const CabeceraGrilla = ({ cantidadLibros, isCarrito }) => {
   const [orden, setOrden] = useState("");
   const {
     productos,
@@ -24,27 +24,37 @@ const CabeceraGrilla = ({ cantidadLibros }) => {
     setIsLoadingGrilla(true);
   };
   return (
-    <div
-      id="cabecera-grilla"
-      className="container d-flex flex-row justify-content-between align-items-center border-bottom border-top mb-3 pt-3 pb-3"
-    >
-      <p>Mostrando {cantidadLibros} Libros</p>
-      <div className="d-flex flex-row justify-content-between">
-        <select
-          className="form-select form-select-sm"
-          aria-label="Small select example"
-          onChange={(e) => handleClick(e.target.value)}
-        >
-          <option value="titulo_ASC" defaultValue={true}>
-            Ordenar por
-          </option>
-          <option value="precio_ASC">precio menor</option>
-          <option value="precio_DESC">precio mayor</option>
-          <option value="titulo_ASC">Titulo a-z</option>
-          <option value="titulo_DESC">Titulo z-a</option>
-        </select>
+    <>
+      <div
+        id="cabecera-grilla"
+        className="container d-flex flex-row justify-content-between align-items-center border-bottom border-top mb-3 pt-3 pb-3"
+      >
+        <p>Mostrando {cantidadLibros} Libros</p>
+        <div className="d-flex flex-row justify-content-between">
+          <select
+            className="form-select form-select-sm"
+            aria-label="Small select example"
+            onChange={(e) => handleClick(e.target.value)}
+          >
+            <option value="titulo_ASC" defaultValue={true}>
+              Ordenar por
+            </option>
+            <option value="precio_ASC">precio menor</option>
+            <option value="precio_DESC">precio mayor</option>
+            <option value="titulo_ASC">Titulo a-z</option>
+            <option value="titulo_DESC">Titulo z-a</option>
+          </select>
+        </div>
       </div>
-    </div>
+      {!isCarrito && (
+        <div className="alert alert-secondary" role="alert">
+          Para agregar productos al carro debes estar logueado.{" "}
+          <Link to="/login" className="link-filtros">
+            Ingresar
+          </Link>
+        </div>
+      )}
+    </>
   );
 };
 
