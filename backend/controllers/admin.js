@@ -5,17 +5,14 @@ const {
   agregaLibro,
   modificaLibro,
   borraLibro,
-  traerAutorSelect,
-  traerEditorialSelect,
-  traerGeneroSelect,
   traerAllLibros
 } = require("../database/consultas");
 
 //agregar un libro
 const postLibroController = async (req, res, next) => {
-  const { titulo, resena, urlimagen, precio, stock, destacado, id_autor, id_editorial, id_genero } = req.body;
+  const { titulo, resena, urlimagen, precio, stock, destacado, autor, editorial, genero } = req.body;
   try {
-    const data = await agregaLibro(titulo, resena, urlimagen, precio, stock, destacado, id_autor, id_editorial, id_genero);
+    const data = await agregaLibro(titulo, resena, urlimagen, precio, stock, destacado, autor, editorial, genero);
     if (data === 1) {
       res.status(200).json({
         status: "Success",
@@ -94,48 +91,6 @@ const deleteLibroController = async (req, res, next) => {
 };
 
 
-//trae autor para selector
-const getSelectAutorController = async (req, res, next) => {
-  try {
-    const dataAutor = await traerAutorSelect();    
-    res.status(200).json(dataAutor);
-      
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ 
-      message: "Internal server error"
-    });
-  };
-};
-
-//trae editorial para selector
-const getSelectEditorialController = async (req, res, next) => {
-  try {
-    const dataEditorial = await traerEditorialSelect();    
-    res.status(200).json(dataEditorial);
-      
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ 
-      message: "Internal server error"
-    });
-  };
-};
-
-//trae genero para selector
-const getSelectGeneroController = async (req, res, next) => {
-  try {
-    const dataGenero = await traerGeneroSelect();    
-    res.status(200).json(dataGenero);
-      
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ 
-      message: "Internal server error"
-    });
-  };
-};
-
 const getLibrosController = async (req, res, next) => {
   try {
     const dataLibros = await traerAllLibros();    
@@ -154,8 +109,5 @@ module.exports = {
   postLibroController,
   putLibroController,
   deleteLibroController,
-  getSelectAutorController,
-  getSelectEditorialController,
-  getSelectGeneroController,
   getLibrosController
 };

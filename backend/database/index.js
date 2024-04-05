@@ -19,9 +19,11 @@ if ((process.env.IS_PROD = 1)) {
   });
 }
 */
+
 console.log("first");
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
 });
+
 
 module.exports = pool;

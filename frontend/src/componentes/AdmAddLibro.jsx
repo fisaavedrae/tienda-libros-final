@@ -1,63 +1,92 @@
 import React, { useState, useContext } from 'react';
-import { MyContext } from "../componentes/context/MyContext";
-import '../assets/css/admin.css'
-import autores from './Autores';
-import generos from './Generos';
-import editoriales from './Editoriales';
-const AdmAddLibro = () => {
+import '../assets/css/admin.css';
+import { AdminContextAPI } from "../componentes/context/AdminContextAPI";
 
-  const {
-    productos,
-    setProductos
-  } = useContext(MyContext);
+const AdmAddLibro = () => {
 
   const [titulo, setTitulo] = useState('');
   const [autor, setAutor] = useState('');
   const [genero, setGenero] = useState('');
   const [editorial, setEditorial] = useState('');
   const [resena, setResena] = useState('');
-  const [urlimg, setUrlimg] = useState('');
-  const [precio, setPrecio] = useState();
-  const [stock, setStock] = useState();
+  const [urlimagen, setUrlimagen] = useState('');
+  const [precio, setPrecio] = useState(0);
+  const [stock, setStock] = useState(0);
+  const [checkbox, setCheckbox] = useState(false);
 
-  const crearLibro = (e) => {      
-    e.preventDefault();
+  const { getData, clear, alerta, setAlerta } = useContext(AdminContextAPI);
 
-    const newId = productos.length + 10;        
+  const estadoCheckbox = (e) => {
+    setCheckbox(e.target.checked);
+  };
+
+  const crearLibro = async (e) => {      
+    e.preventDefault();        
 
     const nuevoLibro = {
-      id: newId,
       titulo:`${titulo}`,
-      autor:`${autor}`,
-      resenia:`${resena}`,
-      editorial:`${editorial}`,      
-      genero:`${genero}`,
-      urlimg: `${urlimg}`,
+      resena:`${resena}`,
+      urlimagen:`${urlimagen}`,
       precio: Number(precio),
-      stock: Number(stock)
+      stock: Number(stock),
+      destacado:JSON.parse(checkbox),
+      autor:`${autor}`,      
+      editorial:`${editorial}`,      
+      genero:`${genero}`      
     };
-    //console.log(nuevoLibro);
+    //console.log(nuevoLibro);    
 
-    setProductos([...productos, nuevoLibro]);
-    //console.log(productos);
+    const token = window.sessionStorage.getItem("token");
+    if (!token) {
+      console.log("no hay token");
+      //navigate("/home");
+    } else {
+      console.log(token);
+      const response = await fetch(
+        import.meta.env.VITE_URLBASE + "/libros",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,            
+          },
+          body: JSON.stringify(nuevoLibro),
+        }
+      );
+      const data = await response.json();
+      if (data.status !== "Bad Request") {
+        setAlerta({
+          class: "alert alert-success fade show text-center",
+          msg: "Libro agregado con exito"
+        });
+      } else {
+        setAlerta({
+          class: "alert alert-danger fade show text-center",
+          msg: data.message
+        });
+        console.log(data);
+      };
+    };
+
+
+    getData();  
     
     setTitulo('');
     setAutor('');
     setGenero('');
     setEditorial('');
     setResena('');
-    setUrlimg('');
+    setUrlimagen('');
     setPrecio(0);
     setStock(0);
-
-    //alert("Libro agregado exitosamente");
-
+    setCheckbox(false);
+    
   };
 
   return (
     <div className="container">
       {/* ----- disparador */}
-      <button type="button" className="btn btn-filtros" data-bs-toggle="modal" data-bs-target="#addModal">
+      <button type="button" className="btn btn-filtros" data-bs-toggle="modal" data-bs-target="#addModal" onClick={clear}>
         Agregar Libro
       </button>
       {/* ----- modal de creacion de libro*/}
@@ -90,15 +119,12 @@ const AdmAddLibro = () => {
                     <div className="row mb-3">
                       <label className="col-sm-2 col-form-label col-form-label-sm">Autor</label>
                       <div className="col-sm-10">
-                        <select id="" className="form-select form-select-sm"
-                          onChange={(e) => setAutor(e.target.value)}
-                          value={autor}
-                          required>
-                            <option selected></option>
-                            {autores.map((autor, index) => (
-                              <option key={index} value={autor}>{autor}</option>
-                            ))}                
-                        </select>
+                        <input 
+                        type="text" 
+                        className="form-control form-control-sm input-adm"
+                        onChange={(e) => setAutor(e.target.value)}
+                        value={autor}
+                        required />
                       </div>
                     </div>
                   </div>
@@ -106,15 +132,12 @@ const AdmAddLibro = () => {
                     <div className="row mb-3">
                       <label className="col-sm-2 col-form-label col-form-label-sm">Genero</label>
                       <div className="col-sm-10">
-                        <select id="" className="form-select form-select-sm"
-                          onChange={(e) => setGenero(e.target.value)}
-                          value={genero}
-                          required >
-                            <option selected></option>
-                            {generos.map((genero, index) => (
-                              <option key={index} value={genero}>{genero}</option>
-                            ))} 
-                        </select>
+                        <input 
+                        type="text" 
+                        className="form-control form-control-sm input-adm"
+                        onChange={(e) => setGenero(e.target.value)}
+                        value={genero}
+                        required />
                       </div>
                     </div>
                   </div>
@@ -122,18 +145,15 @@ const AdmAddLibro = () => {
                     <div className="row mb-3">
                       <label className="col-sm-2 col-form-label col-form-label-sm">Editorial</label>
                       <div className="col-sm-10">
-                        <select id="" className="form-select form-select-sm"
-                          onChange={(e) => setEditorial(e.target.value)}
-                          value={editorial}
-                          required >
-                            <option selected></option>
-                            {editoriales.map((editorial, index) => (
-                              <option key={index} value={editorial}>{editorial}</option>
-                            ))}
-                        </select>
+                        <input 
+                        type="text" 
+                        className="form-control form-control-sm input-adm"
+                        onChange={(e) => setEditorial(e.target.value)}
+                        value={editorial}
+                        required />
                       </div>
                     </div>
-                  </div>
+                  </div>                   
                   <div className="col-md-12 mb-3">
                     <label  className="form-label col-form-label-sm">Reseña</label>
                     <textarea 
@@ -151,8 +171,8 @@ const AdmAddLibro = () => {
                         <input 
                             type="text" 
                             className="form-control form-control-sm input-adm"
-                            onChange={(e) => setUrlimg(e.target.value)}
-                            value={urlimg}
+                            onChange={(e) => setUrlimagen(e.target.value)}
+                            value={urlimagen}
                             required />
                       </div>
                     </div>
@@ -185,12 +205,21 @@ const AdmAddLibro = () => {
                   </div>                              
                   <div className="col-6">
                     <div className="form-check form-switch">
-                      <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+                    <input 
+                      className="form-check-input" 
+                      type="checkbox" 
+                      role="switch" 
+                      id="flexSwitchCheckChecked"
+                      checked={checkbox} 
+                      onChange={estadoCheckbox}/>
                       <label className="form-check-label" htmlFor="flexSwitchCheckChecked">Destacado</label>
                     </div>
                   </div>
                   <div className="col-6">
                     <button type="submit" className="btn btn-filtros mb-5">Agregar</button>
+                  </div>
+                  <div className={alerta.class} role="alert">
+                    {alerta.msg}
                   </div>
                 </form>
               </div>
@@ -199,7 +228,6 @@ const AdmAddLibro = () => {
         </div>
       </div>
     </div>
-
   );
 };
 

@@ -2,15 +2,18 @@ import Header from "../componentes/Header.jsx";
 import AdmAddLibro from "../componentes/AdmAddLibro.jsx";
 import AdmVisor from "../componentes/AdmVisor.jsx";
 import Footer from "../componentes/Footer.jsx";
+import AdminProviderAPI from "../componentes/context/AdminContextAPI.jsx";
 
 
-const Admin = (props) => {
+const Admin = () => {
   return (
     <>
-    <Header />
-    <AdmAddLibro />
-    <AdmVisor />
-    <Footer />
+    <AdminProviderAPI>
+      <Header />
+      <AdmAddLibro />
+      <AdmVisor />
+      <Footer />
+    </AdminProviderAPI>
     </>
   )
 };

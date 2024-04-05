@@ -1,10 +1,13 @@
 const postLibroMiddleware = (req, res, next) => {
-  const { titulo, resena, urlimagen, precio, stock, destacado, id_autor, id_editorial, id_genero } = req.body;  
+  const { titulo, resena, urlimagen, precio, stock, destacado, autor, editorial, genero } = req.body;  
   try {    
     if (
       !titulo || titulo.trim() === "" ||
       !resena || resena.trim() === "" ||
-      !urlimagen || urlimagen.trim() === ""   
+      !urlimagen || urlimagen.trim() === "" ||
+      !autor || autor.trim() === "" ||
+      !genero || genero.trim() === "" ||
+      !editorial || editorial.trim() === ""         
     ){
       return res.status(400).json({
         status: "Bad Request",
@@ -13,28 +16,13 @@ const postLibroMiddleware = (req, res, next) => {
     } else if (precio <= 0 || !Number(precio)){
         return res.status(400).json({
           status: "Bad Request",
-          message: "El valor de precio deben ser numerico y mayor a 0",
+          message: "El valor de PRECIO deben ser numerico y mayor a 0",
         });
     } else if (stock <= 0 || !Number(stock)){
         return res.status(400).json({
           status: "Bad Request",
-          message: "El valor de stock deben ser numerico y mayor a 0",
-        });
-    } else if (id_autor <= 0 || !Number(id_autor)){
-        return res.status(400).json({
-          status: "Bad Request",
-          message: "Debe seleccionar un autor",
-        });
-    } else if (id_editorial <= 0 || !Number(id_editorial)){
-        return res.status(400).json({
-          status: "Bad Request",
-          message: "Debe seleccionar una editorial",
-        });
-    } else if (id_genero <= 0 || !Number(id_genero)){
-        return res.status(400).json({
-          status: "Bad Request",
-          message: "Debe seleccionar un genero",
-        });
+          message: "El valor de STOCK deben ser numerico y mayor a 0",
+        });    
     } else if (typeof destacado !== 'boolean'){
         return res.status(400).json({
           status: "Bad Request",
@@ -71,12 +59,12 @@ const putLibroMiddleware = (req, res, next) => {
       } else if (precio <= 0 || !Number(precio)){
           return res.status(400).json({
             status: "Bad Request",
-            message: "El valor de precio deben ser numerico y mayor a 0",
+            message: "El valor de PRECIO deben ser numerico y mayor a 0",
           });
       } else if (stock <= 0 || !Number(stock)){
           return res.status(400).json({
             status: "Bad Request",
-            message: "El valor de stock deben ser numerico y mayor a 0",
+            message: "El valor de STOCK deben ser numerico y mayor a 0",
           });
       } else if (id_autor <= 0 || !Number(id_autor)){
           return res.status(400).json({
