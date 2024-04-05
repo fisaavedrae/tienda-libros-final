@@ -8,6 +8,22 @@ _[Ir a la Tienda...](https://tienda-libros-final-front.onrender.com/)_
 
 
 ### Indice
+
+1. [Presentacion y prototipo](#presentacion-y-prototipo)
+2. [Desarrollo del frontend](#desarrollo-del-frontend)
+3. [Desarrollo del Backend](#desarrollo-del-backend)
+   - [Consideraciones](#consideraciones)
+   - [API - Documentación de rutas](#api-documentacion-de-rutas)
+4. [Integracion y despliegue](#integracion-y-despliegue)
+   - [Credenciales para Uso](#credenciales-para-uso)
+5. [Presentación de Proyecto](#presentación-de-proyecto) _Pendiente_
+6. [Conclusiones](#conclusiones) _Pendiente_
+
+## Presentacion y Prototipo
+
+
+
+### Indice
 1. [Presentacion y prototipo](#presentacion-y-prototipo)
 2. [Desarrollo del frontend](#desarrollo-del-frontend)
 3. [Desarrollo del Backend](#desarrollo-del-backend)
@@ -20,6 +36,7 @@ _[Ir a la Tienda...](https://tienda-libros-final-front.onrender.com/)_
 
 
 ## Presentacion y Prototipo
+
 - [Link de descargar de documento PDF:](https://tienda-libros-final-front.onrender.com/)
 
 ## Desarrollo del Frontend
@@ -117,7 +134,7 @@ PORT=3000
   <li>page: [integer] Indica la pagina a mostrar</li>
   <li>order_by: [string] Indica el campo y dirección de ordenamiento, recibe uno de los siguientes valores adicionales al campo (unidos por <b>_</b> ): ASC o DESC, por ejemplo: <b>titulo_ASC</b>, <b>precio_DESC</b></li>
   </ul>
-    
+
   ```javascript
   http://localhost:3000/libros/filtros?id_autor=-1&id_editorial=-1&id_genero=-1&maxPrice=100000&limits=6&page=1&order_by=titulo_DESC
   ```
@@ -271,12 +288,24 @@ PORT=3000
 > [!IMPORTANT]
 > Las siguientes 3 rutas requieren que el Token sea de un usuario con rol de administrador. Para obtener este Token use la ruta POST: /login con las siguientes credenciales.
 
+```json
+{
+  "email": "rimar.basaa@gmail.com",
+  "password": "rimar"
+}
+```
+
+
+> [!IMPORTANT]
+> Las siguientes 3 rutas requieren que el Token sea de un usuario con rol de administrador. Para obtener este Token use la ruta POST: /login con las siguientes credenciales.
+
  ```json
   {
     "email": "rimar.basaa@gmail.com",
     "password": "rimar"
   }
   ```
+
 
 - POST: /libros
 
@@ -361,6 +390,21 @@ PORT=3000
 
 
 ## Integracion y Despliegue
+
+Este cuarto hito marca un paso crucial en el proyecto, ya que implica la integración y despliegue de todos sus componentes en internet. El Frontend, el Backend y la base de datos PostgreSQL.
+
+Para lograr este objetivo, se optó por utilizar una plataforma de servicio en la nube, como [Render](https://render.com/), que facilitó el proceso de despliegue tanto de Frontend, Backend y Base Datos garantizando un entorno estable y escalable para nuestra aplicación.
+
+Durante este proceso, se llevaron a cabo pruebas exhaustivas de todas las funcionalidades del proyecto desde la aplicación cliente. Se verificó la persistencia de datos
+y el correcto consumo de las API desde el backend, asegurando que todas las interacciones funcionaran según lo esperado.
+
+Posteriormente, se confirmó que en el servicio elegido para la base de datos, estuvieran gestionando efectivamente todos los datos, garantizando la integridad y
+disponibilidad de la información necesaria para el correcto funcionamiento de la aplicación.
+
+Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una
+
+
+## Integracion y Despliegue
   
 Este cuarto hito marca un paso crucial en el proyecto, ya que implica la integración y despliegue de todos sus componentes en internet. El Frontend, el Backend y la base de datos PostgreSQL.
     
@@ -373,11 +417,13 @@ Posteriormente, se confirmó que en el servicio elegido para la base de datos, e
 disponibilidad de la información necesaria para el correcto funcionamiento de la aplicación.
     
 Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una 
+
 experiencia fluida y confiable.
 
 ### Credenciales para Uso
 
 Si bien usted puede crear su propia cuenta de Usuario, aqui le proporcionamos 2 cuentas ya creadas que puede usar ahora mismo:
+
 - Cuenta de Usuario Normal:
   ```code
   user : juan.carrasco@gmail.com
@@ -388,5 +434,4 @@ Si bien usted puede crear su propia cuenta de Usuario, aqui le proporcionamos 2 
   user : pablo.neruda@gmail.com
   pass : neruda
   ```
-  
 
