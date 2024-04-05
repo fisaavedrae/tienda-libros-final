@@ -377,7 +377,6 @@ Posteriormente, se confirmó que en el servicio elegido para la base de datos, e
 disponibilidad de la información necesaria para el correcto funcionamiento de la aplicación.
     
 Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una 
-
 experiencia fluida y confiable.
 
 ### Credenciales para Uso
