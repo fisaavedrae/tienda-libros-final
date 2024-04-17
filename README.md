@@ -6,20 +6,6 @@
 
 _[Ir a la Tienda...](https://tienda-libros-final-front.onrender.com/)_
 
-### Indice
-
-1. [Presentacion y prototipo](#presentacion-y-prototipo)
-2. [Desarrollo del frontend](#desarrollo-del-frontend)
-3. [Desarrollo del Backend](#desarrollo-del-backend)
-   - [Consideraciones](#consideraciones)
-   - [API - Documentación de rutas](#api-documentacion-de-rutas)
-4. [Integracion y despliegue](#integracion-y-despliegue)
-   - [Credenciales para Uso](#credenciales-para-uso)
-5. [Presentación de Proyecto](#presentación-de-proyecto) _Pendiente_
-6. [Conclusiones](#conclusiones) _Pendiente_
-
-
-## Presentacion y Prototipo
 
 ### Indice
 
@@ -36,7 +22,7 @@ _[Ir a la Tienda...](https://tienda-libros-final-front.onrender.com/)_
 
 ## Presentacion y Prototipo
 
-- [Live app:](https://tienda-libros-final-front.onrender.com/)
+- [Propuesta:](./document/Propuesta%20de%20proyecto.pdf)
 
 ## Desarrollo del Frontend
 
@@ -292,24 +278,6 @@ PORT=3000
 }
 ```
 
-> [!IMPORTANT]
-> Las siguientes 3 rutas requieren que el Token sea de un usuario con rol de administrador. Para obtener este Token use la ruta POST: /login con las siguientes credenciales.
-
-```json
-{
-  "email": "rimar.basaa@gmail.com",
-  "password": "rimar"
-}
-```
-
- ```json
-  {
-    "email": "rimar.basaa@gmail.com",
-    "password": "rimar"
-  }
-  ```
-
-
 
 - POST: /libros
 
@@ -392,20 +360,6 @@ PORT=3000
   http://localhost:3000/libros/1
   ```
 
-## Integracion y Despliegue
-
-
-Este cuarto hito marca un paso crucial en el proyecto, ya que implica la integración y despliegue de todos sus componentes en internet. El Frontend, el Backend y la base de datos PostgreSQL.
-
-Para lograr este objetivo, se optó por utilizar una plataforma de servicio en la nube, como [Render](https://render.com/), que facilitó el proceso de despliegue tanto de Frontend, Backend y Base Datos garantizando un entorno estable y escalable para nuestra aplicación.
-
-Durante este proceso, se llevaron a cabo pruebas exhaustivas de todas las funcionalidades del proyecto desde la aplicación cliente. Se verificó la persistencia de datos
-y el correcto consumo de las API desde el backend, asegurando que todas las interacciones funcionaran según lo esperado.
-
-Posteriormente, se confirmó que en el servicio elegido para la base de datos, estuvieran gestionando efectivamente todos los datos, garantizando la integridad y
-disponibilidad de la información necesaria para el correcto funcionamiento de la aplicación.
-
-Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una
 
 ## Integracion y Despliegue
 
@@ -420,14 +374,7 @@ y el correcto consumo de las API desde el backend, asegurando que todas las inte
 Posteriormente, se confirmó que en el servicio elegido para la base de datos, estuvieran gestionando efectivamente todos los datos, garantizando la integridad y
 disponibilidad de la información necesaria para el correcto funcionamiento de la aplicación.
 
-
-Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una
-
-
-    
-Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una 
-
-experiencia fluida y confiable.
+Con la integración y despliegue exitosos de todos los componentes en internet, el proyecto está listo para ser utilizado por los usuarios finales, ofreciendo una experiencia fluida y confiable.
 
 ### Credenciales para Uso
 
@@ -443,3 +390,13 @@ Si bien usted puede crear su propia cuenta de Usuario, aqui le proporcionamos 2 
   user : pablo.neruda@gmail.com
   pass : neruda
   ```
+
+
+## Presentacion de Proyecto
+
+- [Presentacion:](./document/Presentación%20Final%20Tienda%20de%20Libros.pdf)
+
+
+## Conclusiones
+
+conclusiones aqui:
