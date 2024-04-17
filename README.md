@@ -16,13 +16,13 @@ _[Ir a la Tienda...](https://tienda-libros-final-front.onrender.com/)_
    - [API - Documentación de rutas](#api-documentacion-de-rutas)
 4. [Integracion y despliegue](#integracion-y-despliegue)
    - [Credenciales para Uso](#credenciales-para-uso)
-5. [Presentación de Proyecto](#presentación-de-proyecto) _Pendiente_
+5. [Presentación de Proyecto](#presentacion-de-proyecto)
 6. [Conclusiones](#conclusiones) _Pendiente_
 
 
 ## Presentacion y Prototipo
 
-- [Propuesta:](./document/Propuesta%20de%20proyecto.pdf)
+- [Propuesta en archivo.pdf](./document/Propuesta%20de%20proyecto.pdf)
 
 ## Desarrollo del Frontend
 
@@ -394,7 +394,7 @@ Si bien usted puede crear su propia cuenta de Usuario, aqui le proporcionamos 2 
 
 ## Presentacion de Proyecto
 
-- [Presentacion:](./document/Presentación%20Final%20Tienda%20de%20Libros.pdf)
+- [Presentacion en archivo.pdf](./document/Presentación%20Final%20Tienda%20de%20Libros.pdf)
 
 
 ## Conclusiones
