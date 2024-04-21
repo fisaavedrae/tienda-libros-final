@@ -273,8 +273,8 @@ PORT=3000
 
 ```json
 {
-  "email": "rimar.basaa@gmail.com",
-  "password": "rimar"
+  "email": "pablo.neruda@gmail.com",
+  "password": "neruda"
 }
 ```
 
