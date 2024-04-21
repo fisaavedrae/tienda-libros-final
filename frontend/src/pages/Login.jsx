@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
 import "../assets/css/form.css";
+import { Link, useParams } from "react-router-dom";
 //import { URLBASE } from "../config/index.js";
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -158,6 +159,12 @@ const Login = () => {
               >
                 Ingresar
               </button>
+            </div>
+            <div className="alert alert-secondary" role="alert">
+              No tienes cuenta.{" "}
+              <Link to="/registro" className="link-filtros">
+                Registrate Gratis aqui
+              </Link>
             </div>
           </form>
         </div>
