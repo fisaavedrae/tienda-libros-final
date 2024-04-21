@@ -50,7 +50,7 @@ const CabeceraGrilla = ({ cantidadLibros, isCarrito }) => {
         <div className="alert alert-secondary" role="alert">
           Para agregar productos al carro debes estar logueado.{" "}
           <Link to="/login" className="link-filtros">
-            Ingresar
+            Ingresar aqui
           </Link>
         </div>
       )}

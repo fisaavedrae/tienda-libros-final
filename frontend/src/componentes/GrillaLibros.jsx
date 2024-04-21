@@ -7,6 +7,7 @@ import Paginacion from "./Paginacion.jsx";
 import Filtros from "./Filtros.jsx";
 import CabeceraGrilla from "./CabeceraGrilla.jsx";
 import Spinner from "./Spinner.jsx";
+import Destacado from "./Destacado.jsx";
 
 const GrillaLibros = () => {
   const {
@@ -55,6 +56,7 @@ const GrillaLibros = () => {
     <>
       <div id="contenedor-libros" className="container ">
         <div id="filtros" className="container">
+          <Destacado />
           <Filtros />
         </div>
         <div id="libros">
@@ -74,7 +76,7 @@ const GrillaLibros = () => {
               )}
               {cantidadLibros !== 0 &&
                 productos.map((product, index) => (
-                  <div key={index} className="col">
+                  <div key={index} className="col box-card">
                     <div className="card">
                       <div className="hovereffect">
                         <img

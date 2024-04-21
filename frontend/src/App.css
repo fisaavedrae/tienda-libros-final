@@ -16,7 +16,7 @@ body {
   background-attachment: fixed;
   margin-bottom: 50px;
   padding-bottom: 40px;
-  height: 35vmin;
+  height: 30vmin;
 }
 .navbar-toggler-icon,
 .navbar-toggler,
@@ -56,6 +56,9 @@ body {
   color: white;
   font-size: 2rem;
 }
+.navbar-brand {
+  font-weight: 700;
+}
 .dropdown-item {
   font-size: 0.9rem;
 }
@@ -94,10 +97,11 @@ a:hover {
 }
 .link-filtros {
   font-size: 1rem;
+  color: rgb(203, 142, 9);
 }
 .link-filtros:hover {
   cursor: pointer;
-  color: rgb(203, 142, 9);
+  color: rgb(247, 170, 6);
   text-shadow: none;
 }
 .divider {
@@ -110,6 +114,7 @@ a:hover {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "libros" "filtros";
+  gap: 10px;
 }
 #filtros {
   grid-area: filtros;
@@ -122,6 +127,10 @@ a:hover {
 }
 #cabecera-grilla p {
   font-size: 0.8rem;
+}
+.box-card {
+  display: flex;
+  justify-content: center;
 }
 .card {
   width: 90%;
